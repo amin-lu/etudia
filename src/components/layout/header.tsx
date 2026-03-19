@@ -59,6 +59,13 @@ export function Header() {
 
             {/* Actions */}
             <div className="flex items-center gap-1">
+              <Link
+                href="/partenaire/connexion"
+                className="hidden sm:flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors font-medium"
+              >
+                {t('nav.partnerArea')}
+              </Link>
+
               <button
                 onClick={switchLocale}
                 className="hidden sm:flex items-center gap-1.5 rounded-xl px-2.5 py-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"

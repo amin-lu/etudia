@@ -83,6 +83,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   {t(`nav.${item.key}`)}
                 </Link>
               ))}
+              <Link
+                href="/partenaire/connexion"
+                onClick={onClose}
+                className="block w-full text-left px-6 py-3 text-lg rounded-xl transition-colors text-indigo-600 dark:text-indigo-400 font-medium bg-indigo-100 dark:bg-indigo-500/10 border-t border-zinc-200 dark:border-zinc-800 mt-2 pt-4"
+              >
+                {t('nav.partnerArea')}
+              </Link>
             </nav>
 
             {/* Bottom: theme + language toggles */}

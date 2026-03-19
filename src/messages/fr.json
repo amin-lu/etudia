@@ -9,7 +9,8 @@
       "dashboard": "Dashboard",
       "blog": "Blog",
       "about": "À propos",
-      "admin": "Admin"
+      "admin": "Admin",
+      "partnerArea": "Espace partenaire"
     },
     "buttons": {
       "learnMore": "En savoir plus",
@@ -567,6 +568,28 @@
       "activeCreators": "Créateurs actifs",
       "activeProducts": "Produits actifs",
       "period": "Période"
+    }
+  },
+  "partner": {
+    "login": {
+      "title": "Connexion partenaire",
+      "subtitle": "Accède à ton espace pour suivre tes revenus et gérer tes liens.",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "forgotPassword": "Mot de passe oublié ?",
+      "noAccount": "Tu n'es pas encore partenaire ?",
+      "becomePartner": "Devenir partenaire",
+      "error": "Email ou mot de passe incorrect.",
+      "loading": "Connexion..."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "subtitle": "Entre ton email, on t'envoie un lien de réinitialisation.",
+      "email": "Email",
+      "submit": "Envoyer le lien",
+      "success": "Si un compte existe avec cet email, tu recevras un lien de réinitialisation.",
+      "backToLogin": "Retour à la connexion"
     }
   },
   "seo": {

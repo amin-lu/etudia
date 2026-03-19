@@ -9,7 +9,8 @@
       "dashboard": "Dashboard",
       "blog": "Blog",
       "about": "About",
-      "admin": "Admin"
+      "admin": "Admin",
+      "partnerArea": "Partner Area"
     },
     "buttons": {
       "learnMore": "Learn More",
@@ -497,6 +498,28 @@
     "cta": {
       "title": "Join the adventure",
       "description": "Whether you're a creator or have an app idea, there's a place for you at Etudia."
+    }
+  },
+  "partner": {
+    "login": {
+      "title": "Partner Login",
+      "subtitle": "Access your area to track your earnings and manage your links.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Not a partner yet?",
+      "becomePartner": "Become a partner",
+      "error": "Invalid email or password.",
+      "loading": "Signing in..."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email and we'll send you a reset link.",
+      "email": "Email",
+      "submit": "Send Reset Link",
+      "success": "If an account exists with this email, you'll receive a reset link.",
+      "backToLogin": "Back to login"
     }
   },
   "admin": {

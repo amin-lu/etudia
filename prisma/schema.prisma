@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ──────────────────────────────────────────────
+// Candidatures reçues (formulaire public)
+// ──────────────────────────────────────────────
+model PartnerApplication {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  platform   String   // YouTube, TikTok, Instagram, X, LinkedIn, Twitch, Autre
+  profileUrl String   @map("profile_url")
+  followers  String
+  thematic   String
+  message    String?
+  status     String   @default("pending") // pending, accepted, rejected
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("partner_applications")
+}
+
+// ──────────────────────────────────────────────
+// Partenaires acceptés (compte créé par admin)
+// ──────────────────────────────────────────────
+model Partner {
+  id             String   @id @default(cuid())
+  name           String
+  email          String   @unique
+  passwordHash   String   @map("password_hash")
+  referralCode   String   @unique @map("referral_code")
+  platform       String
+  profileUrl     String   @map("profile_url")
+  followers      Int
+  thematic       String
+  commissionRate Float    @default(0.40) @map("commission_rate")
+  status         String   @default("active") // active, suspended
+  paymentInfo    Json?    @map("payment_info") // { type: "paypal" | "bank", details: {...} }
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  referrals      Referral[]
+  commissions    Commission[]
+  payoutRequests PayoutRequest[]
+  linkClicks     LinkClick[]
+
+  @@map("partners")
+}
+
+// ──────────────────────────────────────────────
+// Applications SaaS du catalogue
+// ──────────────────────────────────────────────
+model Application {
+  id             String   @id @default(cuid())
+  name           String
+  slug           String   @unique
+  description    String
+  descriptionEn  String?  @map("description_en")
+  category       String
+  categoryEn     String?  @map("category_en")
+  price          Float
+  commissionRate Float    @map("commission_rate")
+  status         String   // online, coming_soon, building
+  siteUrl        String?  @map("site_url")
+  logoUrl        String?  @map("logo_url")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  referrals  Referral[]
+  linkClicks LinkClick[]
+
+  @@map("applications")
+}
+
+// ──────────────────────────────────────────────
+// Inscriptions via lien affilié
+// ──────────────────────────────────────────────
+model Referral {
+  id            String   @id @default(cuid())
+  partnerId     String   @map("partner_id")
+  applicationId String   @map("application_id")
+  userId        String   @map("user_id") // identifiant de l'utilisateur inscrit
+  status        String   @default("active") // active, churned
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  partner     Partner     @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@map("referrals")
+}
+
+// ──────────────────────────────────────────────
+// Commissions générées
+// ──────────────────────────────────────────────
+model Commission {
+  id         String   @id @default(cuid())
+  partnerId  String   @map("partner_id")
+  referralId String   @map("referral_id")
+  amount     Float
+  month      DateTime // mois de la commission
+  status     String   @default("pending") // pending, validated, paid
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  partner Partner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+
+  @@map("commissions")
+}
+
+// ──────────────────────────────────────────────
+// Demandes de paiement
+// ──────────────────────────────────────────────
+model PayoutRequest {
+  id        String    @id @default(cuid())
+  partnerId String    @map("partner_id")
+  amount    Float
+  status    String    @default("pending") // pending, processing, paid
+  paidAt    DateTime? @map("paid_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  partner Partner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+
+  @@map("payout_requests")
+}
+
+// ──────────────────────────────────────────────
+// Tracking des clics sur les liens affiliés
+// ──────────────────────────────────────────────
+model LinkClick {
+  id            String   @id @default(cuid())
+  partnerId     String   @map("partner_id")
+  applicationId String   @map("application_id")
+  ip            String?
+  userAgent     String?  @map("user_agent")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  partner     Partner     @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@map("link_clicks")
+}
+
+// ──────────────────────────────────────────────
+// Admin (compte admin pour le back-office)
+// ──────────────────────────────────────────────
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  name         String   @default("Admin")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("admins")
+}
