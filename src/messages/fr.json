@@ -1,0 +1,531 @@
+{
+  "common": {
+    "nav": {
+      "home": "Accueil",
+      "catalogue": "Catalogue",
+      "creators": "Devenir partenaire",
+      "ideas": "Soumettre une idée",
+      "howItWorks": "Comment ça marche",
+      "dashboard": "Dashboard",
+      "blog": "Blog",
+      "about": "À propos",
+      "admin": "Admin"
+    },
+    "buttons": {
+      "learnMore": "En savoir plus",
+      "discover": "Découvrir",
+      "join": "Rejoindre",
+      "signup": "S'inscrire",
+      "login": "Se connecter",
+      "logout": "Se déconnecter",
+      "submit": "Soumettre",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "create": "Créer",
+      "back": "Retour",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "download": "Télécharger",
+      "share": "Partager",
+      "contact": "Nous contacter"
+    },
+    "footer": {
+      "tagline": "On construit des SaaS. Les créateurs les distribuent. Tout le monde gagne.",
+      "product": "Produit",
+      "forCreators": "Pour les créateurs",
+      "company": "Entreprise",
+      "legal": "Mentions légales",
+      "rights": "Tous droits réservés.",
+      "copyright": "© 2026 Etudia. Tous droits réservés.",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "contact": "Contact",
+      "followUs": "Nous suivre",
+      "newsletter": "Abonnez-vous à notre newsletter"
+    },
+    "loading": "Chargement...",
+    "errors": {
+      "required": "Ce champ est obligatoire",
+      "invalid": "Valeur invalide",
+      "error": "Une erreur est survenue",
+      "notFound": "Non trouvé",
+      "unauthorized": "Non autorisé"
+    },
+    "success": {
+      "saved": "Enregistré avec succès",
+      "deleted": "Supprimé avec succès",
+      "created": "Créé avec succès"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "On construit. Ils distribuent. Tout le monde gagne.",
+      "subtitle": "Etudia est un studio qui crée des SaaS B2C et les distribue via des créateurs de contenu. Zéro pub. Que du bouche-à-oreille.",
+      "cta1": "Devenir créateur partenaire",
+      "cta2": "Soumettre une idée de SaaS"
+    },
+    "howItWorks": {
+      "title": "Un modèle simple. Trois gagnants.",
+      "step1": {
+        "title": "On construit",
+        "description": "On identifie une niche, on code le SaaS de A à Z en 30 jours."
+      },
+      "step2": {
+        "title": "Ils distribuent",
+        "description": "Les créateurs en parlent à leur audience et touchent 30 à 50% de commission."
+      },
+      "step3": {
+        "title": "Tous y gagnent",
+        "description": "Les utilisateurs ont un produit de qualité. Les créateurs monétisent. On scale."
+      }
+    },
+    "stats": {
+      "saasBuilt": "SaaS actifs",
+      "creatorsPartnered": "Créateurs partenaires",
+      "revenue": "Redistribué aux créateurs"
+    },
+    "ideas": {
+      "title": "La prochaine idée vient peut-être de vous.",
+      "subtitle": "Soumettez votre idée de SaaS, la communauté vote, et on construit les plus demandées.",
+      "cta": "Proposer une idée"
+    },
+    "testimonials": {
+      "title": "Ce qu'en disent nos partenaires",
+      "cta": "Lire tous les avis"
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "description": "Rejoignez la communauté Etudia aujourd'hui",
+      "button1": "Je suis créateur",
+      "button2": "J'ai une idée"
+    }
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "Un modèle gagnant-gagnant-gagnant",
+    "actors": {
+      "studio": {
+        "title": "Etudia",
+        "description": "On construit des SaaS innovants pour des niches spécifiques"
+      },
+      "creators": {
+        "title": "Les Créateurs",
+        "description": "Vous distribuez à votre audience et gagnez en commission"
+      },
+      "users": {
+        "title": "Les Utilisateurs",
+        "description": "Vous découvrez des outils recommandés par des créateurs de confiance"
+      }
+    },
+    "whyItWorks": {
+      "title": "Pourquoi ça marche",
+      "etudia": {
+        "title": "Pour Etudia",
+        "point1": "Pas de coût d'acquisition client",
+        "point2": "Distribution organique via nos partenaires",
+        "point3": "Validation de marché en continu"
+      },
+      "creators": {
+        "title": "Pour les créateurs",
+        "point1": "Monétisation récurrente sans investissement",
+        "point2": "Commissions attractives et régulières",
+        "point3": "Support marketing complet"
+      },
+      "users": {
+        "title": "Pour les utilisateurs",
+        "point1": "Produit recommandé par quelqu'un de confiance",
+        "point2": "Outils créés pour les besoins réels",
+        "point3": "Accès à des solutions innovantes"
+      }
+    },
+    "process": {
+      "title": "Le processus de construction",
+      "step1": {
+        "number": "01",
+        "title": "Idée",
+        "description": "Nous identifions une niche avec un besoin non satisfait"
+      },
+      "step2": {
+        "number": "02",
+        "title": "Validation",
+        "description": "Nous validons le marché et l'intérêt de la communauté"
+      },
+      "step3": {
+        "number": "03",
+        "title": "Construction",
+        "description": "Notre équipe construit un SaaS de haute qualité en 30 jours"
+      },
+      "step4": {
+        "number": "04",
+        "title": "Lancement",
+        "description": "Lancement public et métriques en temps réel"
+      },
+      "step5": {
+        "number": "05",
+        "title": "Distribution",
+        "description": "Les créateurs partenaires le distribuent à leur audience"
+      }
+    },
+    "transparency": {
+      "title": "Construire en public",
+      "description": "Chez Etudia, nous croyons à la transparence. Consultez notre dashboard public pour voir les performances en temps réel de nos SaaS, les revenus générés, et l'impact de nos partenaires.",
+      "cta": "Voir le dashboard"
+    }
+  },
+  "catalogue": {
+    "title": "Nos SaaS",
+    "subtitle": "Découvrez tous nos produits",
+    "search": "Rechercher un SaaS...",
+    "searchPlaceholder": "Rechercher un SaaS...",
+    "filters": "Filtres",
+    "filterNiche": "Niche",
+    "filterStatus": "Statut",
+    "filterCommission": "Commission",
+    "statusLive": "En ligne",
+    "statusComingSoon": "Bientôt",
+    "statusInConstruction": "En construction",
+    "commissionAll": "Tous",
+    "commissionLow": "30-39%",
+    "commissionHigh": "40%+",
+    "metrics": "Métriques",
+    "activeUsers": "Utilisateurs actifs",
+    "mrr": "Revenus mensuels",
+    "launchDate": "Date de lancement",
+    "commission": "Commission",
+    "screenshots": "Aperçu",
+    "promoteThisSaas": "Promouvoir ce SaaS",
+    "accessSaas": "Accéder au SaaS",
+    "notAvailable": "Bientôt disponible",
+    "backToCatalogue": "Retour au catalogue",
+    "noResults": "Aucun SaaS trouvé",
+    "tryAdjustingFilters": "Essayez d'ajuster vos filtres",
+    "viewAll": "Voir tout le catalogue",
+    "viewDetails": "Voir le détail",
+    "filters_old": {
+      "category": "Catégorie",
+      "pricing": "Tarification",
+      "status": "Statut",
+      "allCategories": "Toutes les catégories",
+      "free": "Gratuit",
+      "paid": "Payant",
+      "launched": "Lancé",
+      "coming_soon": "Bientôt disponible"
+    },
+    "card": {
+      "viewDetails": "Voir les détails",
+      "tryNow": "Essayer maintenant",
+      "distribute": "Devenir partenaire",
+      "users": "utilisateurs actifs",
+      "revenue": "de revenus générés"
+    },
+    "empty": "Aucun SaaS ne correspond à votre recherche"
+  },
+  "creators": {
+    "hero": {
+      "title": "Tu as une audience ? Transforme-la en revenus récurrents.",
+      "subtitle": "Pas besoin de coder. Pas besoin d'investir. On te fournit un SaaS prêt à vendre, tu en parles à ta communauté, tu touches ta commission chaque mois.",
+      "cta": "Devenir partenaire"
+    },
+    "advantages": {
+      "title": "Pourquoi devenir partenaire ?",
+      "items": {
+        "commission": {
+          "title": "30 à 50% de commission",
+          "description": "Sur chaque abonnement généré par ton lien. Revenus récurrents tant que l'utilisateur reste abonné."
+        },
+        "code": {
+          "title": "Zéro technique",
+          "description": "On construit, on héberge, on maintient. Tu n'as qu'une chose à faire : en parler."
+        },
+        "assets": {
+          "title": "Assets fournis",
+          "description": "Visuels, scripts vidéo, arguments de vente. Tout est prêt pour que tu crées du contenu."
+        },
+        "dashboard": {
+          "title": "Dashboard en temps réel",
+          "description": "Suis tes revenus, tes conversions et ta performance depuis ton espace."
+        }
+      }
+    },
+    "simulator": {
+      "title": "Calculez vos revenus",
+      "subtitle": "Estimez combien vous pourriez gagner",
+      "labels": {
+        "subscribers": "Nombre d'abonnés",
+        "conversionRate": "Taux de conversion",
+        "monthlyPrice": "Prix de l'abonnement",
+        "commissionRate": "Ta commission"
+      },
+      "units": {
+        "subscribers": "abonnés"
+      },
+      "result": {
+        "label": "Revenus estimés",
+        "perMonth": "/ mois",
+        "perYear": "/ an",
+        "formula": "{subscribers} abonnés × {conversionRate}% × {price}€ × {commission}% = {result}€/mois"
+      }
+    },
+    "steps": {
+      "title": "Comment ça fonctionne",
+      "items": {
+        "choose": {
+          "title": "Choisis un SaaS dans le catalogue ou propose une idée",
+          "description": ""
+        },
+        "assets": {
+          "title": "On te fournit ton lien affilié unique + assets marketing",
+          "description": ""
+        },
+        "promote": {
+          "title": "Tu en parles à ton audience : vidéos, posts, stories",
+          "description": ""
+        },
+        "earn": {
+          "title": "Tu touches ta commission chaque mois sur chaque abonné",
+          "description": ""
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "q": "Combien je peux gagner ?",
+          "a": "Ça dépend de ta taille d'audience et de ton taux de conversion. Utilise le simulateur ci-dessus pour estimer. Un créateur avec 10 000 abonnés et 2% de conversion sur un SaaS à 12.90€ avec 40% de commission génère environ 1 000€/mois."
+        },
+        {
+          "q": "Je peux promouvoir plusieurs SaaS ?",
+          "a": "Oui. Tu peux promouvoir autant de SaaS que tu veux depuis le catalogue. Chacun a son propre lien affilié."
+        },
+        {
+          "q": "Comment je suis payé ?",
+          "a": "Par virement bancaire chaque mois. Tu reçois ta commission sur tous les abonnements actifs générés via ton lien."
+        },
+        {
+          "q": "C'est quoi le contrat ?",
+          "a": "Un accord de partenariat simple et transparent. Pas d'exclusivité, pas d'engagement de durée. Tu peux arrêter quand tu veux."
+        }
+      ]
+    },
+    "form": {
+      "title": "Rejoignez-nous",
+      "subtitle": "Remplissez le formulaire pour devenir partenaire",
+      "fields": {
+        "name": "Nom complet",
+        "email": "Email",
+        "platform": "Plateforme",
+        "profileUrl": "Lien vers votre profil",
+        "followersCount": "Nombre d'abonnés",
+        "niche": "Niche",
+        "message": "Message",
+        "platformOther": "Autre"
+      },
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "vous@example.com",
+        "profileUrl": "https://youtube.com/@votreprofil",
+        "followersCount": "10000",
+        "niche": "Ex: Tech, Marketing, Fitness",
+        "message": "Dites-nous pourquoi vous aimeriez devenir partenaire..."
+      },
+      "optional": "optionnel",
+      "submitting": "Envoi en cours...",
+      "success": "Candidature envoyée avec succès !",
+      "error": "Une erreur est survenue. Réessayez."
+    }
+  },
+  "ideas": {
+    "title": "Soumettre une idée de SaaS",
+    "subtitle": "Vous avez identifié un besoin ? Proposez une idée de SaaS",
+    "description": "Aidez-nous à identifier les prochaines niches à explorer. Vos meilleures idées pourraient devenir nos prochains SaaS.",
+    "form": {
+      "title": "Nouvelle idée",
+      "saasName": "Nom du SaaS",
+      "niche": "Niche / Catégorie",
+      "problem": "Problème à résoudre",
+      "targetAudience": "Public cible",
+      "hasAudience": "J'ai une audience pour promouvoir ce SaaS",
+      "audienceDetails": "Détails de ton audience",
+      "suggestedPrice": "Prix suggéré (€/mois)",
+      "email": "Email",
+      "optional": "(optionnel)",
+      "submit": "Soumettre l'idée",
+      "submitting": "Envoi...",
+      "success": "Idée soumise avec succès !",
+      "error": "Une erreur est survenue. Réessayez."
+    },
+    "wall": {
+      "title": "Idées de la communauté",
+      "sortVotes": "Plus votées",
+      "sortRecent": "Plus récentes",
+      "loading": "Chargement...",
+      "noIdeas": "Aucune idée pour le moment.",
+      "alreadyVoted": "Vous avez déjà voté pour cette idée.",
+      "voteSuccess": "Vote enregistré !"
+    }
+  },
+  "dashboard": {
+    "title": "Nos chiffres, en toute transparence",
+    "publicTitle": "Dashboard Public",
+    "publicSubtitle": "Transparence totale sur les métriques du studio",
+    "welcome": "Bienvenue",
+    "overview": "Aperçu",
+    "totalMrr": "MRR Total",
+    "activeSaas": "SaaS Actifs",
+    "totalCreators": "Créateurs Partenaires",
+    "totalRedistributed": "Total Redistribué",
+    "totalUsers": "Utilisateurs Total",
+    "mrrEvolution": "Évolution du MRR",
+    "nicheDistribution": "Répartition par niche",
+    "metrics": {
+      "totalSales": "Ventes totales",
+      "totalRevenue": "Revenu total",
+      "activeProducts": "Produits actifs",
+      "conversionRate": "Taux de conversion",
+      "avgOrderValue": "Valeur moyenne de commande",
+      "newClients": "Nouveaux clients",
+      "users": "Utilisateurs actifs"
+    },
+    "charts": {
+      "salesOverTime": "Évolution des ventes",
+      "revenueByProduct": "Revenu par produit",
+      "conversionFunnel": "Entonnoir de conversion",
+      "topPerformers": "Meilleurs partenaires",
+      "userGrowth": "Croissance utilisateurs"
+    },
+    "actions": {
+      "viewDetails": "Voir les détails",
+      "export": "Exporter",
+      "refresh": "Rafraîchir"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Actualités et conseils Etudia",
+    "readMore": "Lire la suite",
+    "published": "Publié le",
+    "by": "par",
+    "readTime": "min de lecture",
+    "categories": {
+      "news": "Actualités",
+      "tips": "Conseils",
+      "tutorials": "Tutoriels",
+      "case_studies": "Études de cas",
+      "features": "Fonctionnalités"
+    },
+    "tags": "Tags",
+    "search": "Rechercher un article...",
+    "noResults": "Aucun article pour le moment",
+    "relatedArticles": "Articles similaires"
+  },
+  "about": {
+    "title": "À propos d'Etudia",
+    "subtitle": "Notre histoire, nos valeurs",
+    "story": {
+      "title": "Notre histoire",
+      "content": "Etudia est un entrepreneur solo qui construit avec l'IA. Nous utilisons les dernières technologies pour construire rapidement des produits de qualité. Notre processus a été optimisé pour passer de l'idée au produit en production en seulement 30 jours."
+    },
+    "manifesto": {
+      "title": "Notre conviction",
+      "content": "Le marketing payant est une course à l'armement. Les coûts d'acquisition explosent, les marges s'effondrent, et les produits médiocres survivent à coups de budget pub. On croit à un autre modèle : construire des produits excellents et les distribuer via des gens qui ont la confiance de leur audience. Pas d'ads. Pas de growth hacks. Juste des bons produits portés par les bonnes personnes."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "value1": {
+        "title": "Transparence",
+        "description": "Dashboard public, chiffres ouverts, erreurs partagées."
+      },
+      "value2": {
+        "title": "Rapidité",
+        "description": "30 jours pour construire un SaaS. Pas 6 mois."
+      },
+      "value3": {
+        "title": "Équité",
+        "description": "30 à 50% de commission. Les créateurs gagnent vraiment."
+      },
+      "value4": {
+        "title": "Qualité",
+        "description": "Chaque SaaS est maintenu et amélioré. Pas de produit abandonné."
+      }
+    },
+    "program": {
+      "title": "Programme 30 jours",
+      "description": "Notre processus a été optimisé pour construire un SaaS complet et fonctionnel en seulement 30 jours. De la validation de marché au lancement en production, avec nos partenaires créateurs."
+    },
+    "cta": {
+      "title": "Rejoins l'aventure",
+      "description": "Que vous soyez créateur ou que vous ayez une idée de SaaS, il y a une place pour vous chez Etudia."
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "dashboard": "Dashboard admin",
+    "sections": {
+      "saas": "Gestion SaaS",
+      "creators": "Gestion Créateurs",
+      "users": "Gestion Utilisateurs",
+      "ideas": "Gestion Idées",
+      "analytics": "Analytique",
+      "settings": "Paramètres"
+    },
+    "saas": {
+      "title": "SaaS",
+      "create": "Créer un SaaS",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "name": "Nom",
+      "description": "Description",
+      "category": "Catégorie",
+      "pricing": "Tarification",
+      "url": "URL du produit",
+      "status": "Statut",
+      "commission": "Commission (%)",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "creators": {
+      "title": "Créateurs",
+      "approve": "Approuver",
+      "reject": "Rejeter",
+      "suspend": "Suspendre",
+      "name": "Nom",
+      "email": "Email",
+      "audience": "Taille audience",
+      "status": "Statut",
+      "earnings": "Revenus",
+      "pending": "En attente",
+      "approved": "Approuvé",
+      "rejected": "Rejeté"
+    },
+    "users": {
+      "title": "Utilisateurs",
+      "email": "Email",
+      "joinDate": "Date d'inscription",
+      "purchases": "Achats",
+      "revenue": "Revenu généré",
+      "lastActive": "Dernière activité",
+      "deactivate": "Désactiver"
+    },
+    "ideas": {
+      "title": "Idées",
+      "review": "Examiner",
+      "approve": "Approuver",
+      "reject": "Rejeter",
+      "inProgress": "En cours",
+      "submitted": "Soumise",
+      "approved": "Approuvée",
+      "developing": "En développement"
+    },
+    "analytics": {
+      "title": "Analytique",
+      "totalRevenue": "Revenu total",
+      "totalSales": "Ventes totales",
+      "activeCreators": "Créateurs actifs",
+      "activeProducts": "Produits actifs",
+      "period": "Période"
+    }
+  }
+}
