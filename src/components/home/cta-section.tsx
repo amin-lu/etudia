@@ -31,7 +31,7 @@ export function CtaSection() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/soumettre-idee"
+              href="/catalogue"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-300 dark:border-zinc-700 text-zinc-950 dark:text-zinc-50 rounded-xl font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
             >
               {t('cta.idea')}

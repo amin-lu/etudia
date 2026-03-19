@@ -52,12 +52,12 @@ export function Hero() {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5, ease: 'easeOut' as const }}
         >
-          <Link href="/devenir-partenaire">
+          <Link href="/catalogue">
             <Button variant="primary" size="lg">
               {t('cta1')}
             </Button>
           </Link>
-          <Link href="/soumettre-idee">
+          <Link href="/devenir-partenaire">
             <Button variant="secondary" size="lg">
               {t('cta2')}
             </Button>

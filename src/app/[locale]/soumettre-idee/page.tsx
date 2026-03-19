@@ -9,14 +9,14 @@ export default function SoumettreIdeePage() {
   const locale = useLocale();
 
   const labels = locale === 'fr' ? {
-    title: 'Soumettre une idée de SaaS',
-    subtitle: 'Vous avez identifié un besoin ? Proposez une idée de SaaS',
-    description: 'Aidez-nous à identifier les prochaines niches à explorer. Vos meilleures idées pourraient devenir nos prochains SaaS.',
+    title: 'Propose un outil pour ta communauté',
+    subtitle: 'Tu connais mieux que personne les besoins de ton audience',
+    description: 'Aidez-nous à identifier les prochaines thématiques à explorer. Vos meilleures idées pourraient devenir nos prochains outils.',
     wallTitle: 'Idées de la communauté',
   } : {
-    title: 'Submit a SaaS Idea',
-    subtitle: 'Identified a need? Propose a SaaS idea',
-    description: 'Help us identify the next niches to explore. Your best ideas could become our next SaaS.',
+    title: 'Suggest a tool for your community',
+    subtitle: 'You know your audience\'s needs better than anyone',
+    description: 'Help us identify the next topics to explore. Your best ideas could become our next tools.',
     wallTitle: 'Community ideas',
   };
 

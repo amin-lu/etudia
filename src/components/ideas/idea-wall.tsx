@@ -76,10 +76,10 @@ const mockIdeas: SaasIdea[] = [
 
 const getStatusLabel = (status: string, locale: string): string => {
   const statusMap: Record<string, Record<string, string>> = {
-    submitted: { fr: 'Soumise', en: 'Submitted' },
-    evaluating: { fr: 'En évaluation', en: 'Evaluating' },
-    developing: { fr: 'En développement', en: 'Developing' },
-    approved: { fr: 'Approuvée', en: 'Approved' },
+    submitted: { fr: 'Proposée', en: 'Proposed' },
+    evaluating: { fr: 'En réflexion', en: 'Under consideration' },
+    developing: { fr: 'Construite', en: 'Built' },
+    approved: { fr: 'Construite', en: 'Built' },
   };
   return statusMap[status]?.[locale] || status;
 };

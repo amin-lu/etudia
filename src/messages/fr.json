@@ -2,9 +2,9 @@
   "common": {
     "nav": {
       "home": "Accueil",
-      "catalogue": "Catalogue",
+      "catalogue": "Les produits",
       "creators": "Devenir partenaire",
-      "ideas": "Soumettre une idée",
+      "ideas": "Comment ça marche",
       "howItWorks": "Comment ça marche",
       "dashboard": "Dashboard",
       "blog": "Blog",
@@ -32,10 +32,11 @@
       "contact": "Nous contacter"
     },
     "footer": {
-      "tagline": "On construit des SaaS. Les créateurs les distribuent. Tout le monde gagne.",
+      "tagline": "On construit les outils. Tu les recommandes. Tout le monde y gagne.",
       "product": "Produit",
       "forCreators": "Pour les créateurs",
       "company": "Entreprise",
+      "resources": "Ressources",
       "legal": "Mentions légales",
       "rights": "Tous droits réservés.",
       "copyright": "© 2026 Etudia. Tous droits réservés.",
@@ -61,50 +62,69 @@
   },
   "home": {
     "hero": {
-      "title": "On construit. Ils distribuent. Tout le monde gagne.",
-      "subtitle": "Etudia est un studio qui crée des SaaS B2C et les distribue via des créateurs de contenu. Zéro pub. Que du bouche-à-oreille.",
-      "cta1": "Devenir créateur partenaire",
-      "cta2": "Soumettre une idée de SaaS"
+      "title": "Tu crées du contenu ? On a l'outil parfait pour ta communauté.",
+      "subtitle": "On construit des applications pour chaque thématique — éducation, fitness, nutrition, et plus. Toi, tu en parles à ta communauté. Et tu touches 30 à 50% de commission chaque mois. Sans rien coder, sans rien investir.",
+      "cta1": "Découvrir les produits",
+      "cta2": "Devenir partenaire"
     },
     "howItWorks": {
-      "title": "Un modèle simple. Trois gagnants.",
+      "title": "Comment ça marche ?",
       "step1": {
-        "title": "On construit",
-        "description": "On identifie une niche, on code le SaaS de A à Z en 30 jours."
+        "title": "Choisis ton produit",
+        "description": "Parcours notre catalogue et trouve l'application qui correspond à ta thématique et à ton audience."
       },
       "step2": {
-        "title": "Ils distribuent",
-        "description": "Les créateurs en parlent à leur audience et touchent 30 à 50% de commission."
+        "title": "Partage avec ta communauté",
+        "description": "On te donne ton lien perso, des visuels, des idées de contenu. Tu en parles comme tu veux : vidéo, story, post."
       },
       "step3": {
-        "title": "Tous y gagnent",
-        "description": "Les utilisateurs ont un produit de qualité. Les créateurs monétisent. On scale."
+        "title": "Touche ta commission chaque mois",
+        "description": "Chaque personne qui s'abonne via ton lien te rapporte entre 30 et 50% de commission. Tous les mois, tant qu'elle reste abonnée."
       }
     },
     "stats": {
-      "saasBuilt": "SaaS actifs",
+      "saasBuilt": "Applications actives",
       "creatorsPartnered": "Créateurs partenaires",
       "revenue": "Redistribué aux créateurs"
     },
+    "featured": {
+      "title": "Nos applications disponibles",
+      "subtitle": "Des outils prêts à recommander",
+      "cta": "Voir tous les produits"
+    },
     "ideas": {
-      "title": "La prochaine idée vient peut-être de vous.",
-      "subtitle": "Soumettez votre idée de SaaS, la communauté vote, et on construit les plus demandées.",
+      "title": "Tu as une idée de produit pour ta communauté ?",
+      "subtitle": "Dis-nous quel outil manque pour ta thématique. Si l'idée est bonne, on le construit et tu seras le premier à le promouvoir.",
       "cta": "Proposer une idée"
     },
     "testimonials": {
       "title": "Ce qu'en disent nos partenaires",
       "cta": "Lire tous les avis"
     },
-    "socialProof": {
-      "title": "Ils nous font confiance",
-      "subtitle": "Premiers partenaires bientôt annoncés — Rejoins la liste d'attente",
-      "cta": "Devenir partenaire"
+    "whyCreators": {
+      "title": "Pourquoi les créateurs nous choisissent",
+      "item1": {
+        "title": "Revenus récurrents",
+        "description": "Tu ne fais pas un post sponsorisé one-shot. Chaque abonné te rapporte tous les mois."
+      },
+      "item2": {
+        "title": "Zéro prise de tête",
+        "description": "Pas de stock, pas de SAV, pas de code. On gère tout. Tu te concentres sur ton contenu."
+      },
+      "item3": {
+        "title": "Des produits qui aident vraiment",
+        "description": "On ne vend pas du vent. Chaque application résout un vrai problème pour ta communauté."
+      },
+      "item4": {
+        "title": "Tout est transparent",
+        "description": "Tu suis tes revenus en temps réel depuis ton espace personnel."
+      }
     },
     "cta": {
-      "title": "Prêt à rejoindre l'aventure ?",
-      "subtitle": "Que tu sois créateur ou que tu aies une idée de SaaS, on a une place pour toi.",
+      "title": "Prêt à monétiser ta communauté autrement ?",
+      "subtitle": "Rejoins les créateurs qui recommandent des outils utiles à leur audience et gagnent une commission chaque mois.",
       "partner": "Devenir partenaire",
-      "idea": "Soumettre une idée"
+      "idea": "Voir les produits"
     }
   },
   "howItWorks": {
@@ -113,7 +133,7 @@
     "actors": {
       "studio": {
         "title": "Etudia",
-        "description": "On construit des SaaS innovants pour des niches spécifiques"
+        "description": "On construit des applications innovantes pour des thématiques spécifiques"
       },
       "creators": {
         "title": "Les Créateurs",
@@ -150,7 +170,7 @@
       "step1": {
         "number": "01",
         "title": "Idée",
-        "description": "Nous identifions une niche avec un besoin non satisfait"
+        "description": "Nous identifions une thématique avec un besoin non satisfait"
       },
       "step2": {
         "number": "02",
@@ -160,7 +180,7 @@
       "step3": {
         "number": "03",
         "title": "Construction",
-        "description": "Notre équipe construit un SaaS de haute qualité en 30 jours"
+        "description": "Notre équipe construit une application de haute qualité en 30 jours"
       },
       "step4": {
         "number": "04",
@@ -175,17 +195,17 @@
     },
     "transparency": {
       "title": "Construire en public",
-      "description": "Chez Etudia, nous croyons à la transparence. Consultez notre dashboard public pour voir les performances en temps réel de nos SaaS, les revenus générés, et l'impact de nos partenaires.",
+      "description": "Chez Etudia, nous croyons à la transparence. Consultez notre dashboard public pour voir les performances en temps réel de nos applications, les revenus générés, et l'impact de nos partenaires.",
       "cta": "Voir le dashboard"
     }
   },
   "catalogue": {
-    "title": "Nos SaaS",
-    "subtitle": "Découvrez tous nos produits",
-    "search": "Rechercher un SaaS...",
-    "searchPlaceholder": "Rechercher un SaaS...",
+    "title": "Nos applications",
+    "subtitle": "Trouve l'outil qui correspond à ta thématique",
+    "search": "Rechercher une application...",
+    "searchPlaceholder": "Rechercher une application...",
     "filters": "Filtres",
-    "filterNiche": "Niche",
+    "filterNiche": "Thématique",
     "filterStatus": "Statut",
     "filterCommission": "Commission",
     "statusLive": "En ligne",
@@ -200,11 +220,11 @@
     "launchDate": "Date de lancement",
     "commission": "Commission",
     "screenshots": "Aperçu",
-    "promoteThisSaas": "Promouvoir ce SaaS",
-    "accessSaas": "Accéder au SaaS",
+    "promoteThisSaas": "Promouvoir cette application",
+    "accessSaas": "Accéder à l'application",
     "notAvailable": "Bientôt disponible",
     "backToCatalogue": "Retour au catalogue",
-    "noResults": "Aucun SaaS trouvé",
+    "noResults": "Aucune application trouvée",
     "tryAdjustingFilters": "Essayez d'ajuster vos filtres",
     "viewAll": "Voir tout le catalogue",
     "viewDetails": "Voir le détail",
@@ -212,12 +232,13 @@
     "pricing": "Tarification",
     "pricingFrom": "À partir de {price}/mois",
     "pricingFree": "Gratuit",
-    "promoteTitle": "Promouvoir ce SaaS",
+    "promoteTitle": "Promouvoir cette application",
     "promoteCommission": "{rate}% sur chaque abonnement",
     "promoteSubtext": "Recevez votre lien affilié et commencez à gagner",
     "promoteApply": "Postuler comme partenaire",
     "metricsNew": "Nouveau",
-    "comingSoonMessage": "Ce SaaS est en cours de construction",
+    "newBadge": "Nouveau",
+    "comingSoonMessage": "Cette application est en cours de construction",
     "comingSoonSubtext": "Reviens bientôt pour découvrir ce produit !",
     "filters_old": {
       "category": "Catégorie",
@@ -236,12 +257,12 @@
       "users": "utilisateurs actifs",
       "revenue": "de revenus générés"
     },
-    "empty": "Aucun SaaS ne correspond à votre recherche"
+    "empty": "Aucune application ne correspond à votre recherche"
   },
   "creators": {
     "hero": {
       "title": "Tu as une audience ? Transforme-la en revenus récurrents.",
-      "subtitle": "Pas besoin de coder. Pas besoin d'investir. On te fournit un SaaS prêt à vendre, tu en parles à ta communauté, tu touches ta commission chaque mois.",
+      "subtitle": "On te fournit une application prête à recommander, tu en parles à ta communauté, tu touches ta commission chaque mois.",
       "cta": "Devenir partenaire"
     },
     "advantages": {
@@ -252,16 +273,16 @@
           "description": "Sur chaque abonnement généré par ton lien. Revenus récurrents tant que l'utilisateur reste abonné."
         },
         "code": {
-          "title": "Zéro technique",
-          "description": "On construit, on héberge, on maintient. Tu n'as qu'une chose à faire : en parler."
+          "title": "Zéro prise de tête",
+          "description": "Pas besoin de coder, pas de stock à gérer, pas de service client. On s'occupe de tout, tu te concentres sur ton contenu."
         },
         "assets": {
-          "title": "Assets fournis",
-          "description": "Visuels, scripts vidéo, arguments de vente. Tout est prêt pour que tu crées du contenu."
+          "title": "Tout est prêt pour toi",
+          "description": "Visuels, idées de vidéos, arguments clés. On te donne tout pour créer du contenu facilement."
         },
         "dashboard": {
-          "title": "Dashboard en temps réel",
-          "description": "Suis tes revenus, tes conversions et ta performance depuis ton espace."
+          "title": "Suis tes gains en direct",
+          "description": "Ton espace personnel te montre exactement combien tu gagnes, combien de personnes se sont inscrites via ton lien."
         }
       }
     },
@@ -269,7 +290,7 @@
       "title": "Calculez vos revenus",
       "subtitle": "Estimez combien vous pourriez gagner",
       "labels": {
-        "subscribers": "Nombre d'abonnés",
+        "subscribers": "Taille de ta communauté",
         "conversionRate": "Taux de conversion",
         "monthlyPrice": "Prix de l'abonnement",
         "commissionRate": "Ta commission"
@@ -288,7 +309,7 @@
       "title": "Comment ça fonctionne",
       "items": {
         "choose": {
-          "title": "Choisis un SaaS dans le catalogue ou propose une idée",
+          "title": "Choisis une application dans le catalogue",
           "description": ""
         },
         "assets": {
@@ -310,11 +331,11 @@
       "items": [
         {
           "q": "Combien je peux gagner ?",
-          "a": "Ça dépend de ta taille d'audience et de ton taux de conversion. Utilise le simulateur ci-dessus pour estimer. Un créateur avec 10 000 abonnés et 2% de conversion sur un SaaS à 12.90€ avec 40% de commission génère environ 1 000€/mois."
+          "a": "Ça dépend de ta taille d'audience et de ton taux de conversion. Utilise le simulateur ci-dessus pour estimer. Un créateur avec 10 000 abonnés et 2% de conversion sur une application à 12.90€ avec 40% de commission génère environ 1 000€/mois."
         },
         {
-          "q": "Je peux promouvoir plusieurs SaaS ?",
-          "a": "Oui. Tu peux promouvoir autant de SaaS que tu veux depuis le catalogue. Chacun a son propre lien affilié."
+          "q": "Je peux promouvoir plusieurs applications ?",
+          "a": "Oui. Tu peux promouvoir autant d'applications que tu veux depuis le catalogue. Chacune a son propre lien affilié."
         },
         {
           "q": "Comment je suis payé ?",
@@ -335,7 +356,7 @@
         "platform": "Plateforme",
         "profileUrl": "Lien vers votre profil",
         "followersCount": "Nombre d'abonnés",
-        "niche": "Niche",
+        "niche": "Thématique",
         "message": "Message",
         "platformOther": "Autre"
       },
@@ -354,16 +375,16 @@
     }
   },
   "ideas": {
-    "title": "Soumettre une idée de SaaS",
-    "subtitle": "Vous avez identifié un besoin ? Proposez une idée de SaaS",
-    "description": "Aidez-nous à identifier les prochaines niches à explorer. Vos meilleures idées pourraient devenir nos prochains SaaS.",
+    "title": "Propose un outil pour ta communauté",
+    "subtitle": "Tu connais mieux que personne les besoins de ton audience. Dis-nous quel outil leur manque, et si l'idée plaît, on le construit.",
+    "description": "Aidez-nous à identifier les prochaines thématiques à explorer. Vos meilleures idées pourraient devenir nos prochaines applications.",
     "form": {
       "title": "Nouvelle idée",
-      "saasName": "Nom du SaaS",
-      "niche": "Niche / Catégorie",
+      "saasName": "Nom de l'outil",
+      "niche": "Thématique",
       "problem": "Problème à résoudre",
       "targetAudience": "Public cible",
-      "hasAudience": "J'ai une audience pour promouvoir ce SaaS",
+      "hasAudience": "J'ai une audience pour promouvoir cet outil",
       "audienceDetails": "Détails de ton audience",
       "suggestedPrice": "Prix suggéré (€/mois)",
       "email": "Email",
@@ -380,7 +401,11 @@
       "loading": "Chargement...",
       "noIdeas": "Aucune idée pour le moment.",
       "alreadyVoted": "Vous avez déjà voté pour cette idée.",
-      "voteSuccess": "Vote enregistré !"
+      "voteSuccess": "Vote enregistré !",
+      "statusUnderReview": "En réflexion",
+      "statusProposed": "Proposée",
+      "statusUnderReflection": "En réflexion",
+      "statusConstructed": "Construite"
     }
   },
   "dashboard": {
@@ -389,13 +414,13 @@
     "publicSubtitle": "Transparence totale sur les métriques du studio",
     "welcome": "Bienvenue",
     "overview": "Aperçu",
-    "totalMrr": "MRR Total",
-    "activeSaas": "SaaS Actifs",
+    "totalMrr": "Revenus mensuels totaux",
+    "activeSaas": "Applications actives",
     "totalCreators": "Créateurs Partenaires",
     "totalRedistributed": "Total Redistribué",
     "totalUsers": "Utilisateurs Total",
-    "mrrEvolution": "Évolution du MRR",
-    "nicheDistribution": "Répartition par niche",
+    "mrrEvolution": "Évolution des revenus",
+    "nicheDistribution": "Répartition par thématique",
     "metrics": {
       "totalSales": "Ventes totales",
       "totalRevenue": "Revenu total",
@@ -438,11 +463,11 @@
     "relatedArticles": "Articles similaires"
   },
   "about": {
-    "title": "À propos d'Etudia",
+    "title": "Qui est derrière Etudia ?",
     "subtitle": "Notre histoire, nos valeurs",
     "story": {
       "title": "Notre histoire",
-      "content": "Etudia est un entrepreneur solo qui construit avec l'IA. Nous utilisons les dernières technologies pour construire rapidement des produits de qualité. Notre processus a été optimisé pour passer de l'idée au produit en production en seulement 30 jours."
+      "content": "Etudia, c'est moi — un développeur passionné qui croit qu'on peut construire de meilleurs produits et les distribuer autrement. Pas de pubs, pas de budgets marketing délirants. Juste des bons outils, portés par des créateurs en qui leur communauté a confiance."
     },
     "manifesto": {
       "title": "Notre conviction",
@@ -451,36 +476,36 @@
     "values": {
       "title": "Nos valeurs",
       "value1": {
-        "title": "Transparence",
-        "description": "Dashboard public, chiffres ouverts, erreurs partagées."
+        "title": "Tout est ouvert",
+        "description": "Tes revenus, nos chiffres, nos erreurs. On joue cartes sur table."
       },
       "value2": {
-        "title": "Rapidité",
-        "description": "30 jours pour construire un SaaS. Pas 6 mois."
+        "title": "On avance vite",
+        "description": "Un produit construit en 30 jours, pas en 6 mois."
       },
       "value3": {
-        "title": "Équité",
-        "description": "30 à 50% de commission. Les créateurs gagnent vraiment."
+        "title": "Tu gagnes vraiment",
+        "description": "30 à 50% de commission. Pas 5% comme ailleurs."
       },
       "value4": {
-        "title": "Qualité",
-        "description": "Chaque SaaS est maintenu et amélioré. Pas de produit abandonné."
+        "title": "Des produits suivis",
+        "description": "Chaque application est maintenue et améliorée. On n'abandonne rien."
       }
     },
     "program": {
-      "title": "Programme 30 jours",
-      "description": "Notre processus a été optimisé pour construire un SaaS complet et fonctionnel en seulement 30 jours. De la validation de marché au lancement en production, avec nos partenaires créateurs."
+      "title": "Comment on construit un produit",
+      "description": "Notre processus a été optimisé pour construire une application complète et fonctionnelle en seulement 30 jours. De la validation de marché au lancement en production, avec nos partenaires créateurs."
     },
     "cta": {
       "title": "Rejoins l'aventure",
-      "description": "Que vous soyez créateur ou que vous ayez une idée de SaaS, il y a une place pour vous chez Etudia."
+      "description": "Que vous soyez créateur ou que vous ayez une idée de produit, il y a une place pour vous chez Etudia."
     }
   },
   "admin": {
     "title": "Administration",
     "dashboard": "Dashboard admin",
     "sections": {
-      "saas": "Gestion SaaS",
+      "saas": "Gestion Applications",
       "creators": "Gestion Créateurs",
       "users": "Gestion Utilisateurs",
       "ideas": "Gestion Idées",
@@ -488,13 +513,13 @@
       "settings": "Paramètres"
     },
     "saas": {
-      "title": "SaaS",
-      "create": "Créer un SaaS",
+      "title": "Applications",
+      "create": "Créer une application",
       "edit": "Modifier",
       "delete": "Supprimer",
       "name": "Nom",
       "description": "Description",
-      "category": "Catégorie",
+      "category": "Thématique",
       "pricing": "Tarification",
       "url": "URL du produit",
       "status": "Statut",
@@ -530,8 +555,8 @@
       "review": "Examiner",
       "approve": "Approuver",
       "reject": "Rejeter",
-      "inProgress": "En cours",
-      "submitted": "Soumise",
+      "inProgress": "En réflexion",
+      "submitted": "Proposée",
       "approved": "Approuvée",
       "developing": "En développement"
     },
@@ -542,6 +567,12 @@
       "activeCreators": "Créateurs actifs",
       "activeProducts": "Produits actifs",
       "period": "Période"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Etudia — Monétise ta communauté avec des outils digitaux",
+      "description": "Tu es créateur de contenu ? Recommande des applications utiles à ta communauté et touche jusqu'à 50% de commission chaque mois."
     }
   }
 }

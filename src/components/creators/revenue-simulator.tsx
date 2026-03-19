@@ -41,10 +41,10 @@ export function RevenueSimulator() {
           )}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* Subscribers Slider */}
+            {/* Community Size Slider */}
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
-                {t('labels.subscribers')}
+                {t('labels.subscribers') || 'Taille de ta communauté'}
               </label>
               <input
                 type="range"

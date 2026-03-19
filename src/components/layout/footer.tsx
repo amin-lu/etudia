@@ -13,8 +13,6 @@ const navLinks = [
 
 const resourceLinks = [
   { href: '/comment-ca-marche', key: 'howItWorks' },
-  { href: '/dashboard', key: 'dashboard' },
-  { href: '/blog', key: 'blog' },
 ]
 
 const socialLinks = [
@@ -86,7 +84,7 @@ export function Footer() {
           {/* Ressources */}
           <div>
             <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50 mb-3">
-              {locale === 'fr' ? 'Ressources' : 'Resources'}
+              {t('footer.resources')}
             </h3>
             <ul className="space-y-2">
               {resourceLinks.map((item) => (

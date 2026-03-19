@@ -53,24 +53,30 @@ export function SaasCard({ product, locale }: SaasCardProps) {
 
           {/* Metrics */}
           <div className="space-y-2 pt-2">
-            <div className="flex justify-between text-sm">
-              <span className="text-foreground/60">
-                {t('activeUsers')}
-              </span>
-              <span className="text-foreground font-medium">
-                {product.active_users?.toLocaleString() ?? 0}
-              </span>
-            </div>
-            {(product.price_monthly ?? 0) > 0 && (
+            {product.active_users === 0 ? (
+              <div className="flex justify-center">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300">
+                  {t('newBadge')}
+                </span>
+              </div>
+            ) : (
               <div className="flex justify-between text-sm">
                 <span className="text-foreground/60">
-                  {t('commission')}
+                  {t('activeUsers')}
                 </span>
-                <span className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                  {product.commission_rate}%
+                <span className="text-foreground font-medium">
+                  {product.active_users?.toLocaleString() ?? 0}
                 </span>
               </div>
             )}
+            <div className="flex justify-between text-sm">
+              <span className="text-foreground/60">
+                {t('commission')}
+              </span>
+              <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                {product.commission_rate}%
+              </span>
+            </div>
             <div className="flex justify-between text-sm">
               <span className="text-foreground/60">
                 Price

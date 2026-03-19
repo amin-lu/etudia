@@ -23,6 +23,7 @@ interface FeaturedSaaS {
 export function FeaturedSaas() {
   const t = useTranslations('catalogue.card')
   const catT = useTranslations('catalogue')
+  const homeT = useTranslations('home.featured')
   const locale = useLocale()
 
   // Mock data with realistic numbers (0 users, real prices)
@@ -59,7 +60,10 @@ export function FeaturedSaas() {
     },
   ]
 
-  const getStatusBadge = (status: string) => {
+  const getStatusBadge = (status: string, activeUsers: number) => {
+    if (activeUsers === 0) {
+      return <Badge variant="info">{catT('metricsNew')}</Badge>
+    }
     if (status === 'live') {
       return <Badge variant="success">En ligne</Badge>
     }
@@ -77,9 +81,9 @@ export function FeaturedSaas() {
           transition={{ duration: 0.5, ease: 'easeOut' as const }}
         >
           <h2 className="text-3xl md:text-4xl font-semibold font-[family-name:var(--font-display)] text-foreground mb-4 tracking-tight">
-            Nos SaaS en vedette
+            {homeT('title')}
           </h2>
-          <p className="text-foreground/70 text-lg">Découvrez nos produits les plus populaires</p>
+          <p className="text-foreground/70 text-lg">{homeT('subtitle')}</p>
         </motion.div>
 
         <motion.div
@@ -115,18 +119,18 @@ export function FeaturedSaas() {
                   </p>
 
                   <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2 text-accent font-semibold text-lg">
+                      <TrendingUp className="w-5 h-5" />
+                      <span>{saas.commissionRate}% de commission</span>
+                    </div>
                     <div className="flex items-center gap-2 text-foreground/70 text-sm">
                       <Users className="w-4 h-4" />
                       <span>{saas.activeUsers} {t('users')}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                      <TrendingUp className="w-4 h-4" />
-                      <span>{formatPrice(saas.price, locale)}</span>
-                    </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-4 border-t border-card-border">
-                    {getStatusBadge(saas.status)}
+                    {getStatusBadge(saas.status, saas.activeUsers)}
                   </div>
                 </CardContent>
               </Card>
@@ -143,7 +147,7 @@ export function FeaturedSaas() {
         >
           <Link href="/catalogue">
             <Button variant="secondary" size="lg">
-              {catT('viewAll')}
+              {homeT('cta')}
             </Button>
           </Link>
         </motion.div>

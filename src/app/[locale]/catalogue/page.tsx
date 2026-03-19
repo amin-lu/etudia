@@ -12,8 +12,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   return {
-    title: locale === 'fr' ? 'Catalogue SaaS — Etudia' : 'SaaS Catalog — Etudia',
-    description: locale === 'fr' ? 'Découvrez tous nos produits SaaS et trouvez celui qui correspond à vos besoins.' : 'Discover all our SaaS products and find the one that matches your needs.',
+    title: locale === 'fr' ? 'Nos applications — Etudia' : 'Our Applications — Etudia',
+    description: locale === 'fr' ? 'Découvrez toutes nos applications et trouvez celle qui correspond à votre thématique.' : 'Discover all our applications and find the one that matches your topic.',
     openGraph: { images: ['/og-image.png'] },
   }
 }

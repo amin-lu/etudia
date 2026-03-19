@@ -9,10 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navItems = [
   { href: '/catalogue', key: 'catalogue' },
   { href: '/devenir-partenaire', key: 'creators' },
-  { href: '/soumettre-idee', key: 'ideas' },
   { href: '/comment-ca-marche', key: 'howItWorks' },
-  { href: '/dashboard', key: 'dashboard' },
-  { href: '/blog', key: 'blog' },
   { href: '/a-propos', key: 'about' },
 ] as const
 

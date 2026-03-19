@@ -144,12 +144,25 @@ export function ProductDetailClient({ product, locale }: ProductDetailClientProp
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Active Users */}
             <div className="rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6">
-              <p className="text-foreground/60 text-sm font-medium mb-2">
-                {t('activeUsers')}
-              </p>
-              <p className="text-3xl font-bold text-foreground">
-                {displayUsers}
-              </p>
+              {product.active_users === 0 ? (
+                <>
+                  <p className="text-foreground/60 text-sm font-medium mb-2">
+                    {t('activeUsers')}
+                  </p>
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300">
+                    {t('newBadge')}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <p className="text-foreground/60 text-sm font-medium mb-2">
+                    {t('activeUsers')}
+                  </p>
+                  <p className="text-3xl font-bold text-foreground">
+                    {displayUsers}
+                  </p>
+                </>
+              )}
             </div>
 
             {/* MRR */}

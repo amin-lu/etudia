@@ -10,9 +10,7 @@ import { MobileNav } from './mobile-nav'
 const navItems = [
   { href: '/catalogue', key: 'catalogue' },
   { href: '/devenir-partenaire', key: 'creators' },
-  { href: '/soumettre-idee', key: 'ideas' },
-  { href: '/dashboard', key: 'dashboard' },
-  { href: '/blog', key: 'blog' },
+  { href: '/comment-ca-marche', key: 'howItWorks' },
   { href: '/a-propos', key: 'about' },
 ] as const
 

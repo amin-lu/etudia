@@ -2,9 +2,9 @@
   "common": {
     "nav": {
       "home": "Home",
-      "catalogue": "Catalogue",
+      "catalogue": "Products",
       "creators": "Become Partner",
-      "ideas": "Submit Idea",
+      "ideas": "How It Works",
       "howItWorks": "How It Works",
       "dashboard": "Dashboard",
       "blog": "Blog",
@@ -32,10 +32,11 @@
       "contact": "Contact Us"
     },
     "footer": {
-      "tagline": "We build SaaS products. Creators distribute them. Everyone wins.",
+      "tagline": "We build the tools. You recommend them. Everyone wins.",
       "product": "Product",
       "forCreators": "For Creators",
       "company": "Company",
+      "resources": "Resources",
       "legal": "Legal",
       "rights": "All rights reserved.",
       "copyright": "© 2026 Etudia. All rights reserved.",
@@ -61,50 +62,69 @@
   },
   "home": {
     "hero": {
-      "title": "We build. They distribute. Everyone wins.",
-      "subtitle": "Etudia is a studio that builds B2C SaaS products and distributes them through content creators. Zero ads. Pure word-of-mouth.",
-      "cta1": "Become a creator partner",
-      "cta2": "Submit a SaaS idea"
+      "title": "You create content? We have the perfect tool for your community.",
+      "subtitle": "We build apps for every topic — education, fitness, nutrition, and more. You share them with your community. And you earn 30 to 50% commission every month. No coding, no investment.",
+      "cta1": "Discover products",
+      "cta2": "Become a partner"
     },
     "howItWorks": {
-      "title": "A simple model. Three winners.",
+      "title": "How does it work?",
       "step1": {
-        "title": "We build",
-        "description": "We identify a niche and code the SaaS from A to Z in 30 days."
+        "title": "Choose your product",
+        "description": "Browse our catalog and find the app that matches your topic and audience."
       },
       "step2": {
-        "title": "They distribute",
-        "description": "Creators talk to their audience and earn 30-50% commission."
+        "title": "Share with your community",
+        "description": "We give you your personal link, visuals, content ideas. Share it your way: video, story, post."
       },
       "step3": {
-        "title": "Everyone wins",
-        "description": "Users get a quality product. Creators monetize. We scale."
+        "title": "Earn your commission every month",
+        "description": "Every person who subscribes through your link earns you 30 to 50% commission. Every month, as long as they stay subscribed."
       }
     },
     "stats": {
-      "saasBuilt": "Active SaaS",
+      "saasBuilt": "Active apps",
       "creatorsPartnered": "Creator partners",
       "revenue": "Redistributed to creators"
     },
+    "featured": {
+      "title": "Our available apps",
+      "subtitle": "Tools ready to recommend",
+      "cta": "View all products"
+    },
     "ideas": {
-      "title": "The next idea might come from you.",
-      "subtitle": "Submit your SaaS idea, the community votes, and we build the most requested ones.",
-      "cta": "Submit an idea"
+      "title": "Got a product idea for your community?",
+      "subtitle": "Tell us what tool is missing for your topic. If the idea is good, we'll build it and you'll be the first to promote it.",
+      "cta": "Suggest an idea"
     },
     "testimonials": {
       "title": "What Our Partners Say",
       "cta": "Read All Reviews"
     },
-    "socialProof": {
-      "title": "They trust us",
-      "subtitle": "First partners to be announced soon — Join the waitlist",
-      "cta": "Become a partner"
+    "whyCreators": {
+      "title": "Why creators choose us",
+      "item1": {
+        "title": "Recurring revenue",
+        "description": "No more one-shot sponsored posts. Each subscriber earns you money every month."
+      },
+      "item2": {
+        "title": "Zero hassle",
+        "description": "No inventory, no customer support, no code. We handle everything. You focus on your content."
+      },
+      "item3": {
+        "title": "Products that truly help",
+        "description": "We don't sell hot air. Every app solves a real problem for your community."
+      },
+      "item4": {
+        "title": "Full transparency",
+        "description": "Track your earnings in real-time from your personal dashboard."
+      }
     },
     "cta": {
-      "title": "Ready to join the adventure?",
-      "subtitle": "Whether you're a creator or have a SaaS idea, there's a place for you.",
+      "title": "Ready to monetize your community differently?",
+      "subtitle": "Join creators who recommend useful tools to their audience and earn a commission every month.",
       "partner": "Become a partner",
-      "idea": "Submit an idea"
+      "idea": "See products"
     }
   },
   "howItWorks": {
@@ -113,7 +133,7 @@
     "actors": {
       "studio": {
         "title": "Etudia",
-        "description": "We build innovative SaaS products for specific niches"
+        "description": "We build innovative apps for specific topics"
       },
       "creators": {
         "title": "The Creators",
@@ -150,7 +170,7 @@
       "step1": {
         "number": "01",
         "title": "Idea",
-        "description": "We identify a niche with an unmet need"
+        "description": "We identify a topic with an unmet need"
       },
       "step2": {
         "number": "02",
@@ -160,7 +180,7 @@
       "step3": {
         "number": "03",
         "title": "Building",
-        "description": "Our team builds high-quality SaaS in 30 days"
+        "description": "Our team builds high-quality apps in 30 days"
       },
       "step4": {
         "number": "04",
@@ -175,17 +195,17 @@
     },
     "transparency": {
       "title": "Building in Public",
-      "description": "At Etudia, we believe in transparency. Check our public dashboard to see real-time performance of our SaaS, generated revenues, and the impact of our partners.",
+      "description": "At Etudia, we believe in transparency. Check our public dashboard to see real-time performance of our apps, generated revenues, and the impact of our partners.",
       "cta": "View Dashboard"
     }
   },
   "catalogue": {
-    "title": "Our SaaS products",
-    "subtitle": "Discover All Our Products",
-    "search": "Search a SaaS...",
-    "searchPlaceholder": "Search for a SaaS...",
+    "title": "Our applications",
+    "subtitle": "Find the tool that matches your topic",
+    "search": "Search an app...",
+    "searchPlaceholder": "Search for an app...",
     "filters": "Filters",
-    "filterNiche": "Niche",
+    "filterNiche": "Topic",
     "filterStatus": "Status",
     "filterCommission": "Commission",
     "statusLive": "Live",
@@ -200,11 +220,11 @@
     "launchDate": "Launch Date",
     "commission": "Commission",
     "screenshots": "Preview",
-    "promoteThisSaas": "Promote this SaaS",
-    "accessSaas": "Access SaaS",
+    "promoteThisSaas": "Promote this app",
+    "accessSaas": "Access app",
     "notAvailable": "Coming Soon",
     "backToCatalogue": "Back to catalogue",
-    "noResults": "No SaaS found",
+    "noResults": "No apps found",
     "tryAdjustingFilters": "Try adjusting your filters",
     "viewAll": "View full catalogue",
     "viewDetails": "View details",
@@ -212,12 +232,13 @@
     "pricing": "Pricing",
     "pricingFrom": "Starting at {price}/month",
     "pricingFree": "Free",
-    "promoteTitle": "Promote this SaaS",
+    "promoteTitle": "Promote this app",
     "promoteCommission": "{rate}% on every subscription",
     "promoteSubtext": "Get your affiliate link and start earning",
     "promoteApply": "Apply as partner",
     "metricsNew": "New",
-    "comingSoonMessage": "This SaaS is under construction",
+    "newBadge": "New",
+    "comingSoonMessage": "This app is under construction",
     "comingSoonSubtext": "Come back soon to discover this product!",
     "filters_old": {
       "category": "Category",
@@ -236,12 +257,12 @@
       "users": "active users",
       "revenue": "in revenue generated"
     },
-    "empty": "No SaaS matches your search"
+    "empty": "No apps match your search"
   },
   "creators": {
     "hero": {
       "title": "Got an audience? Turn it into recurring revenue.",
-      "subtitle": "No coding needed. No investment needed. We provide a ready-to-sell SaaS, you talk to your community, you earn your commission every month.",
+      "subtitle": "We provide you with an app ready to recommend, you share it with your community, you earn your commission every month.",
       "cta": "Become Partner"
     },
     "advantages": {
@@ -252,16 +273,16 @@
           "description": "On every subscription from your link. Recurring revenue as long as the user stays subscribed."
         },
         "code": {
-          "title": "Zero tech skills needed",
-          "description": "We build, host, and maintain. You just need to talk about it."
+          "title": "Zero hassle",
+          "description": "No coding, no inventory, no customer support. We handle everything, you focus on your content."
         },
         "assets": {
-          "title": "Marketing assets provided",
-          "description": "Visuals, video scripts, talking points. Everything's ready for your content."
+          "title": "Everything's ready for you",
+          "description": "Visuals, video ideas, key arguments. We give you everything to create content easily."
         },
         "dashboard": {
-          "title": "Real-time dashboard",
-          "description": "Track your revenue, conversions and performance from your dashboard."
+          "title": "Track your earnings live",
+          "description": "Your personal dashboard shows exactly how much you earn, how many people signed up through your link."
         }
       }
     },
@@ -269,7 +290,7 @@
       "title": "Calculate Your Revenue",
       "subtitle": "Estimate how much you could earn",
       "labels": {
-        "subscribers": "Number of followers",
+        "subscribers": "Size of your community",
         "conversionRate": "Conversion rate",
         "monthlyPrice": "Subscription price",
         "commissionRate": "Your commission"
@@ -288,7 +309,7 @@
       "title": "How it works",
       "items": {
         "choose": {
-          "title": "Pick a SaaS from the catalog or propose an idea",
+          "title": "Pick an app from the catalog",
           "description": ""
         },
         "assets": {
@@ -310,11 +331,11 @@
       "items": [
         {
           "q": "How much can I earn?",
-          "a": "It depends on your audience size and conversion rate. Use the simulator above to estimate. A creator with 10,000 subscribers and 2% conversion on a €12.90 SaaS with 40% commission earns about €1,000/month."
+          "a": "It depends on your audience size and conversion rate. Use the simulator above to estimate. A creator with 10,000 subscribers and 2% conversion on a €12.90 app with 40% commission earns about €1,000/month."
         },
         {
-          "q": "Can I promote multiple SaaS products?",
-          "a": "Yes. You can promote as many SaaS products as you want from the catalog. Each has its own affiliate link."
+          "q": "Can I promote multiple apps?",
+          "a": "Yes. You can promote as many apps as you want from the catalog. Each has its own affiliate link."
         },
         {
           "q": "How do I get paid?",
@@ -335,7 +356,7 @@
         "platform": "Platform",
         "profileUrl": "Link to your profile",
         "followersCount": "Number of followers",
-        "niche": "Niche",
+        "niche": "Topic",
         "message": "Message",
         "platformOther": "Other"
       },
@@ -354,16 +375,16 @@
     }
   },
   "ideas": {
-    "title": "Submit a SaaS Idea",
-    "subtitle": "Identified a need? Propose a SaaS idea",
-    "description": "Help us identify the next niches to explore. Your best ideas could become our next SaaS.",
+    "title": "Suggest a tool for your community",
+    "subtitle": "You know your audience's needs better than anyone. Tell us what tool they're missing, and if the idea is good, we'll build it.",
+    "description": "Help us identify the next topics to explore. Your best ideas could become our next apps.",
     "form": {
       "title": "New Idea",
-      "saasName": "SaaS name",
-      "niche": "Niche / Category",
+      "saasName": "Tool name",
+      "niche": "Topic",
       "problem": "Problem to solve",
       "targetAudience": "Target audience",
-      "hasAudience": "I have an audience to promote this SaaS",
+      "hasAudience": "I have an audience to promote this tool",
       "audienceDetails": "Audience details",
       "suggestedPrice": "Suggested price (€/month)",
       "email": "Email",
@@ -380,7 +401,9 @@
       "loading": "Loading...",
       "noIdeas": "No ideas yet.",
       "alreadyVoted": "You already voted for this idea.",
-      "voteSuccess": "Vote recorded!"
+      "voteSuccess": "Vote recorded!",
+      "statusUnderReview": "Under consideration",
+      "statusProposed": "Proposed"
     }
   },
   "dashboard": {
@@ -389,13 +412,13 @@
     "publicSubtitle": "Full transparency on studio metrics",
     "welcome": "Welcome",
     "overview": "Overview",
-    "totalMrr": "Total MRR",
-    "activeSaas": "Active SaaS",
+    "totalMrr": "Total Monthly Revenue",
+    "activeSaas": "Active apps",
     "totalCreators": "Creator Partners",
     "totalRedistributed": "Total Redistributed",
     "totalUsers": "Total Users",
-    "mrrEvolution": "MRR Evolution",
-    "nicheDistribution": "Distribution by Niche",
+    "mrrEvolution": "Revenue Evolution",
+    "nicheDistribution": "Distribution by Topic",
     "metrics": {
       "totalSales": "Total Sales",
       "totalRevenue": "Total Revenue",
@@ -438,11 +461,11 @@
     "relatedArticles": "Related Articles"
   },
   "about": {
-    "title": "About Etudia",
+    "title": "Who's Behind Etudia?",
     "subtitle": "Our story, our values",
     "story": {
       "title": "Our Story",
-      "content": "We're a solo entrepreneur building with AI. We use the latest technologies to build quality products quickly. Our process has been optimized to go from idea to production in just 30 days."
+      "content": "Etudia is me — a passionate developer who believes we can build better products and distribute them differently. No ads, no crazy marketing budgets. Just good tools carried by creators that their community trusts."
     },
     "manifesto": {
       "title": "Our belief",
@@ -451,29 +474,29 @@
     "values": {
       "title": "Our Values",
       "value1": {
-        "title": "Transparency",
-        "description": "Public dashboard, open numbers, shared mistakes."
+        "title": "Everything's open",
+        "description": "Your earnings, our numbers, our mistakes. All cards on the table."
       },
       "value2": {
-        "title": "Speed",
-        "description": "30 days to build a SaaS. Not 6 months."
+        "title": "We move fast",
+        "description": "A product built in 30 days, not 6 months."
       },
       "value3": {
-        "title": "Fairness",
-        "description": "30-50% commission. Creators actually earn."
+        "title": "You earn real money",
+        "description": "30-50% commission. Not 5% like everyone else."
       },
       "value4": {
-        "title": "Quality",
-        "description": "Every SaaS is maintained and improved. No abandoned products."
+        "title": "Products we maintain",
+        "description": "Every tool is maintained and improved. We don't abandon anything."
       }
     },
     "program": {
-      "title": "30-Day Program",
-      "description": "Our process has been optimized to build a complete and functional SaaS in just 30 days. From market validation to production launch, with our creator partners."
+      "title": "How We Build a Product",
+      "description": "Our process has been optimized to build a complete and functional application in just 30 days. From market validation to production launch, with our creator partners."
     },
     "cta": {
       "title": "Join the adventure",
-      "description": "Whether you're a creator or have a SaaS idea, there's a place for you at Etudia."
+      "description": "Whether you're a creator or have an app idea, there's a place for you at Etudia."
     }
   },
   "admin": {
