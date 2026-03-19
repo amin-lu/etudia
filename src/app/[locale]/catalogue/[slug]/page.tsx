@@ -32,6 +32,20 @@ const mockProducts: SaasProduct[] = [
     launched_at: '2025-01-15',
     created_at: '',
     updated_at: '',
+    features: [
+      'Cours structurés semaine par semaine',
+      'QCM corrigés avec explications',
+      'Fiches de révision téléchargeables',
+      'Suivi de progression personnalisé',
+      'Garantie diplômé ou remboursé'
+    ],
+    features_en: [
+      'Week-by-week structured courses',
+      'Corrected quizzes with explanations',
+      'Downloadable revision sheets',
+      'Personalized progress tracking',
+      'Pass or money-back guarantee'
+    ],
   },
   {
     id: '2',
@@ -58,6 +72,20 @@ const mockProducts: SaasProduct[] = [
     launched_at: '2025-03-01',
     created_at: '',
     updated_at: '',
+    features: [
+      'Couvre les 6 séries du baccalauréat malien',
+      'Moteur de quiz interactif',
+      'Flashcards avec répétition espacée',
+      'Mode sombre',
+      'Fonctionne hors ligne'
+    ],
+    features_en: [
+      'Covers all 6 Malian baccalaureate series',
+      'Interactive quiz engine',
+      'Flashcards with spaced repetition',
+      'Dark mode',
+      'Works offline'
+    ],
   },
   {
     id: '3',
@@ -116,7 +144,7 @@ async function fetchProduct(slug: string): Promise<SaasProduct | null> {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const product = await fetchProduct(slug)
 
   if (!product) {
@@ -125,9 +153,13 @@ export async function generateMetadata({
     }
   }
 
+  const name = locale === 'fr' ? product.name : product.name_en || product.name
+  const description = locale === 'fr' ? product.description_short : product.description_short_en || product.description_short
+
   return {
-    title: product.name,
-    description: product.description_short_en,
+    title: `${name} — Etudia`,
+    description: description,
+    openGraph: { images: ['/og-image.png'] },
   }
 }
 

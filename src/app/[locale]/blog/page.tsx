@@ -1,9 +1,25 @@
+import type { Metadata } from 'next'
 import { getTranslations } from "next-intl/server"
 import { createClient } from "@/lib/supabase/server"
 import { BlogCard } from "@/components/blog/blog-card"
 import { EmptyState } from "@/components/ui/empty-state"
 import { BlogPost } from "@/lib/supabase/types"
 import { FileText } from "lucide-react"
+
+interface PageProps {
+  params: Promise<{
+    locale: string
+  }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params
+  return {
+    title: locale === 'fr' ? 'Blog — Etudia' : 'Blog — Etudia',
+    description: locale === 'fr' ? 'Actualités et conseils pour les créateurs et entrepreneurs.' : 'News and insights for creators and entrepreneurs.',
+    openGraph: { images: ['/og-image.png'] },
+  }
+}
 
 const mockBlogPosts: BlogPost[] = [
   {

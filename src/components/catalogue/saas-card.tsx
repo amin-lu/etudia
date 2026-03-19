@@ -1,10 +1,11 @@
 'use client'
 
 import { SaasProduct } from '@/lib/supabase/types'
-import { formatCurrency, getStatusLabel, getStatusColor, cn } from '@/lib/utils'
+import { formatCurrency, formatPrice, getStatusLabel, getStatusColor, cn } from '@/lib/utils'
 import { Link } from '@/i18n/routing'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 interface SaasCardProps {
   product: SaasProduct
@@ -13,6 +14,7 @@ interface SaasCardProps {
 
 export function SaasCard({ product, locale }: SaasCardProps) {
   const t = useTranslations('catalogue')
+  const localeCode = useLocale()
 
   const description = locale === 'en' ? product.description_short_en : product.description_short
 
@@ -20,7 +22,8 @@ export function SaasCard({ product, locale }: SaasCardProps) {
     <Link href={`/catalogue/${product.slug}`}>
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="h-full cursor-pointer rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-shadow hover:shadow-lg"
+        className="h-full cursor-pointer rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-colors hover:border-indigo-500/50"
+        role="article"
       >
         <div className="flex flex-col h-full gap-4">
           {/* Header */}
@@ -73,7 +76,7 @@ export function SaasCard({ product, locale }: SaasCardProps) {
                 Price
               </span>
               <span className="text-foreground font-semibold">
-                {(product.price_monthly ?? 0) > 0 ? `$${(product.price_monthly ?? 0).toFixed(2)}` : 'Free'}
+                {formatPrice(product.price_monthly ?? 0, localeCode)}
               </span>
             </div>
           </div>

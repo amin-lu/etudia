@@ -23,6 +23,8 @@ export interface SaasProduct {
   display_order: number
   created_at: string
   updated_at: string
+  features?: string[]
+  features_en?: string[]
 }
 
 export interface CreatorApplication {

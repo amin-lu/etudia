@@ -1,6 +1,22 @@
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { SaasProduct } from '@/lib/supabase/types'
 import { CatalogueContent } from '@/components/catalogue/catalogue-content'
+
+interface PageProps {
+  params: Promise<{
+    locale: string
+  }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params
+  return {
+    title: locale === 'fr' ? 'Catalogue SaaS — Etudia' : 'SaaS Catalog — Etudia',
+    description: locale === 'fr' ? 'Découvrez tous nos produits SaaS et trouvez celui qui correspond à vos besoins.' : 'Discover all our SaaS products and find the one that matches your needs.',
+    openGraph: { images: ['/og-image.png'] },
+  }
+}
 
 const mockProducts: SaasProduct[] = [
   {

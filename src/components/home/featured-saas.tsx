@@ -1,12 +1,13 @@
 "use client"
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/routing'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Users, TrendingUp } from 'lucide-react'
+import { formatPrice } from '@/lib/utils'
 
 interface FeaturedSaaS {
   id: string
@@ -16,40 +17,45 @@ interface FeaturedSaaS {
   activeUsers: number
   commissionRate: number
   status: 'live' | 'coming_soon'
+  price: number
 }
 
 export function FeaturedSaas() {
   const t = useTranslations('catalogue.card')
   const catT = useTranslations('catalogue')
+  const locale = useLocale()
 
-  // Mock data - will be replaced with Supabase queries later
+  // Mock data with realistic numbers (0 users, real prices)
   const saasList: FeaturedSaaS[] = [
     {
       id: '1',
       name: 'ETUDIET',
       niche: 'Education',
       description: 'Un SaaS pour aider les étudiants à gérer leur alimentation et santé',
-      activeUsers: 234,
+      activeUsers: 0,
       commissionRate: 35,
       status: 'live',
+      price: 12.90,
     },
     {
       id: '2',
       name: 'BacSuccess',
       niche: 'Éducation',
       description: 'Plateforme complète de préparation au baccalauréat',
-      activeUsers: 567,
+      activeUsers: 0,
       commissionRate: 40,
       status: 'live',
+      price: 14.90,
     },
     {
       id: '3',
       name: 'FitCoach AI',
       niche: 'Fitness',
       description: 'Coach fitness IA personnalisé pour votre progression',
-      activeUsers: 123,
+      activeUsers: 0,
       commissionRate: 30,
       status: 'live',
+      price: 0,
     },
   ]
 
@@ -115,7 +121,7 @@ export function FeaturedSaas() {
                     </div>
                     <div className="flex items-center gap-2 text-foreground/70 text-sm">
                       <TrendingUp className="w-4 h-4" />
-                      <span>Commission: {saas.commissionRate}%</span>
+                      <span>{formatPrice(saas.price, locale)}</span>
                     </div>
                   </div>
 

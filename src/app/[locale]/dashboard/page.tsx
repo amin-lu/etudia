@@ -1,9 +1,25 @@
+import type { Metadata } from 'next'
 import { getTranslations } from "next-intl/server"
 import { createClient } from "@/lib/supabase/server"
 import { MetricsCards } from "@/components/dashboard/metrics-cards"
 import { MRRChart } from "@/components/dashboard/mrr-chart"
 import { NicheChart } from "@/components/dashboard/niche-chart"
 import { MetricsSnapshot } from "@/lib/supabase/types"
+
+interface PageProps {
+  params: Promise<{
+    locale: string
+  }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params
+  return {
+    title: locale === 'fr' ? 'Nos chiffres — Etudia' : 'Our Numbers — Etudia',
+    description: locale === 'fr' ? 'Dashboard public avec tous nos chiffres en toute transparence.' : 'Public dashboard with all our numbers in full transparency.',
+    openGraph: { images: ['/og-image.png'] },
+  }
+}
 
 const mockMRRData = [
   { month: "M-2", mrr: 0 },

@@ -11,6 +11,14 @@ export function formatCurrency(amount: number, locale = 'fr-FR'): string {
   }).format(amount)
 }
 
+export function formatPrice(amount: number, locale: string = 'fr'): string {
+  if (amount === 0) return locale === 'fr' ? 'Gratuit' : 'Free';
+  if (locale === 'fr') {
+    return `${amount.toFixed(2).replace('.', ',')}€`;
+  }
+  return `€${amount.toFixed(2)}`;
+}
+
 export function formatNumber(num: number): string {
   if (num >= 1000) {
     return `${(num / 1000).toFixed(1)}k`

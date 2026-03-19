@@ -95,11 +95,16 @@
       "title": "Ce qu'en disent nos partenaires",
       "cta": "Lire tous les avis"
     },
+    "socialProof": {
+      "title": "Ils nous font confiance",
+      "subtitle": "Premiers partenaires bientôt annoncés — Rejoins la liste d'attente",
+      "cta": "Devenir partenaire"
+    },
     "cta": {
-      "title": "Prêt à commencer ?",
-      "description": "Rejoignez la communauté Etudia aujourd'hui",
-      "button1": "Je suis créateur",
-      "button2": "J'ai une idée"
+      "title": "Prêt à rejoindre l'aventure ?",
+      "subtitle": "Que tu sois créateur ou que tu aies une idée de SaaS, on a une place pour toi.",
+      "partner": "Devenir partenaire",
+      "idea": "Soumettre une idée"
     }
   },
   "howItWorks": {
@@ -203,6 +208,17 @@
     "tryAdjustingFilters": "Essayez d'ajuster vos filtres",
     "viewAll": "Voir tout le catalogue",
     "viewDetails": "Voir le détail",
+    "features": "Fonctionnalités",
+    "pricing": "Tarification",
+    "pricingFrom": "À partir de {price}/mois",
+    "pricingFree": "Gratuit",
+    "promoteTitle": "Promouvoir ce SaaS",
+    "promoteCommission": "{rate}% sur chaque abonnement",
+    "promoteSubtext": "Recevez votre lien affilié et commencez à gagner",
+    "promoteApply": "Postuler comme partenaire",
+    "metricsNew": "Nouveau",
+    "comingSoonMessage": "Ce SaaS est en cours de construction",
+    "comingSoonSubtext": "Reviens bientôt pour découvrir ce produit !",
     "filters_old": {
       "category": "Catégorie",
       "pricing": "Tarification",

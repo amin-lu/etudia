@@ -218,14 +218,14 @@ export async function generateMetadata({
     locale === "en" ? post.excerpt_en || post.excerpt : post.excerpt
 
   return {
-    title,
+    title: locale === 'en' ? `${title} — Etudia Blog` : `${title} — Blog Etudia`,
     description,
     openGraph: {
       title,
       description,
       type: "article",
       publishedTime: post.published_at || undefined,
-      images: post.cover_image_url ? [{ url: post.cover_image_url }] : [],
+      images: post.cover_image_url ? [{ url: post.cover_image_url }] : [{ url: '/og-image.png' }],
     },
   }
 }

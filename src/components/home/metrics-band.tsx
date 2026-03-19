@@ -15,10 +15,10 @@ interface Metric {
 export function MetricsBand() {
   const t = useTranslations('home.stats')
 
-  // Mock data - will be replaced with Supabase queries later
+  // Mock data - all zeros, section will be hidden
   const metrics: Metric[] = [
     {
-      value: 2,
+      value: 0,
       label: t('saasBuilt'),
       key: 'saasBuilt',
     },
@@ -34,6 +34,10 @@ export function MetricsBand() {
       suffix: '€',
     },
   ]
+
+  // Hide section if all metrics are 0
+  const hasData = metrics.some(m => m.value > 0)
+  if (!hasData) return null
 
   return (
     <motion.section

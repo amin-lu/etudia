@@ -95,11 +95,16 @@
       "title": "What Our Partners Say",
       "cta": "Read All Reviews"
     },
+    "socialProof": {
+      "title": "They trust us",
+      "subtitle": "First partners to be announced soon — Join the waitlist",
+      "cta": "Become a partner"
+    },
     "cta": {
-      "title": "Ready to get started?",
-      "description": "Join the Etudia community today",
-      "button1": "I'm a creator",
-      "button2": "I have an idea"
+      "title": "Ready to join the adventure?",
+      "subtitle": "Whether you're a creator or have a SaaS idea, there's a place for you.",
+      "partner": "Become a partner",
+      "idea": "Submit an idea"
     }
   },
   "howItWorks": {
@@ -203,6 +208,17 @@
     "tryAdjustingFilters": "Try adjusting your filters",
     "viewAll": "View full catalogue",
     "viewDetails": "View details",
+    "features": "Features",
+    "pricing": "Pricing",
+    "pricingFrom": "Starting at {price}/month",
+    "pricingFree": "Free",
+    "promoteTitle": "Promote this SaaS",
+    "promoteCommission": "{rate}% on every subscription",
+    "promoteSubtext": "Get your affiliate link and start earning",
+    "promoteApply": "Apply as partner",
+    "metricsNew": "New",
+    "comingSoonMessage": "This SaaS is under construction",
+    "comingSoonSubtext": "Come back soon to discover this product!",
     "filters_old": {
       "category": "Category",
       "pricing": "Pricing",

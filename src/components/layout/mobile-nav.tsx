@@ -71,13 +71,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </div>
 
             {/* Nav links */}
-            <nav className="flex-1 flex flex-col p-4 gap-1 overflow-y-auto">
+            <nav className="flex-1 flex flex-col px-6 py-4 gap-1 overflow-y-auto">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
                   onClick={onClose}
-                  className={`px-4 py-3 text-sm rounded-xl transition-colors ${
+                  className={`block w-full text-left px-6 py-3 text-lg rounded-xl transition-colors ${
                     pathname === item.href
                       ? 'text-indigo-600 dark:text-indigo-400 font-medium bg-indigo-100 dark:bg-indigo-500/10'
                       : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800'
