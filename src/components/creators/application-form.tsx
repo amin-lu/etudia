@@ -71,10 +71,10 @@ export function ApplicationForm() {
         email: formData.email,
         platform: formData.platform,
         profile_url: formData.profile_url,
-        followers_count: parseInt(formData.followers_count, 10),
+        followers_count: formData.followers_count,
         niche: formData.niche,
         message: formData.message || null,
-        status: 'submitted',
+        status: 'pending',
       });
 
       if (dbError) {
