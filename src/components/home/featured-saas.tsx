@@ -6,11 +6,12 @@ import { Link } from '@/i18n/routing'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Users, TrendingUp } from 'lucide-react'
+import { TrendingUp, ExternalLink } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 
 interface FeaturedSaaS {
   id: string
+  slug: string
   name: string
   niche: string
   description: string
@@ -18,6 +19,7 @@ interface FeaturedSaaS {
   commissionRate: number
   status: 'live' | 'coming_soon'
   price: number
+  externalUrl: string | null
 }
 
 export function FeaturedSaas() {
@@ -30,33 +32,45 @@ export function FeaturedSaas() {
   const saasList: FeaturedSaaS[] = [
     {
       id: '1',
+      slug: 'etudiet',
       name: 'ETUDIET',
-      niche: 'Education',
-      description: 'Un SaaS pour aider les étudiants à gérer leur alimentation et santé',
-      activeUsers: 0,
-      commissionRate: 35,
-      status: 'live',
-      price: 12.90,
-    },
-    {
-      id: '2',
-      name: 'BacSuccess',
-      niche: 'Éducation',
-      description: 'Plateforme complète de préparation au baccalauréat',
+      niche: locale === 'fr' ? 'Éducation' : 'Education',
+      description: locale === 'fr'
+        ? 'Plateforme de révision structurée pour les étudiants en BTS Diététique.'
+        : 'Structured revision platform for BTS Dietetics students.',
       activeUsers: 0,
       commissionRate: 40,
       status: 'live',
-      price: 14.90,
+      price: 12.90,
+      externalUrl: 'https://etudiete.vercel.app',
+    },
+    {
+      id: '2',
+      slug: 'bacsuccess',
+      name: 'BacSuccess',
+      niche: locale === 'fr' ? 'Éducation' : 'Education',
+      description: locale === 'fr'
+        ? 'Préparation au baccalauréat malien — toutes séries, quiz et flashcards.'
+        : 'Malian baccalaureate preparation — all series, quizzes and flashcards.',
+      activeUsers: 0,
+      commissionRate: 40,
+      status: 'live',
+      price: 0,
+      externalUrl: 'https://bacsuccess.vercel.app',
     },
     {
       id: '3',
-      name: 'FitCoach AI',
+      slug: 'fittrack-pro',
+      name: 'FitTrack Pro',
       niche: 'Fitness',
-      description: 'Coach fitness IA personnalisé pour votre progression',
+      description: locale === 'fr'
+        ? 'Suivi nutritionnel et programmes d\'entraînement personnalisés.'
+        : 'Nutritional tracking and personalized training programs.',
       activeUsers: 0,
-      commissionRate: 30,
-      status: 'live',
-      price: 0,
+      commissionRate: 45,
+      status: 'coming_soon',
+      price: 9.90,
+      externalUrl: null,
     },
   ]
 
@@ -121,16 +135,36 @@ export function FeaturedSaas() {
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-2 text-accent font-semibold text-lg">
                       <TrendingUp className="w-5 h-5" />
-                      <span>{saas.commissionRate}% de commission</span>
+                      <span>{saas.commissionRate}% {locale === 'fr' ? 'de commission' : 'commission'}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                      <Users className="w-4 h-4" />
-                      <span>{saas.activeUsers} {t('users')}</span>
-                    </div>
+                    {saas.price > 0 && (
+                      <div className="text-foreground/70 text-sm">
+                        {formatPrice(saas.price, locale)}/{locale === 'fr' ? 'mois' : 'mo'}
+                      </div>
+                    )}
+                    {saas.price === 0 && (
+                      <div className="text-green-600 dark:text-green-400 text-sm font-medium">
+                        {locale === 'fr' ? 'Gratuit' : 'Free'}
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-card-border">
-                    {getStatusBadge(saas.status, saas.activeUsers)}
+                  <div className="flex items-center justify-between pt-4 border-t border-card-border gap-2">
+                    <Link href={`/catalogue/${saas.slug}`} className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+                      {catT('viewDetails')} →
+                    </Link>
+                    {saas.externalUrl && saas.status === 'live' && (
+                      <a
+                        href={saas.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg bg-indigo-600 dark:bg-indigo-500 text-white hover:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors"
+                      >
+                        {locale === 'fr' ? 'Voir le site' : 'Visit site'}
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {!saas.externalUrl && getStatusBadge(saas.status, saas.activeUsers)}
                   </div>
                 </CardContent>
               </Card>
