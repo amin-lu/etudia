@@ -1,6 +1,6 @@
 import { Inter, Instrument_Sans } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
-import { createClient } from '@/lib/supabase/server'
+import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { AdminLogin } from '@/components/admin/admin-login'
 import { AdminSidebar } from '@/components/admin/admin-sidebar'
@@ -25,30 +25,9 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  let user = null
-  let isAdmin = false
+  const session = await auth()
 
-  try {
-    const supabase = await createClient()
-    const {
-      data: { user: authUser },
-    } = await supabase.auth.getUser()
-    user = authUser
-
-    if (user) {
-      const { data } = await supabase
-        .from('admin_users')
-        .select('role')
-        .eq('user_id', user.id)
-        .single()
-
-      isAdmin = data?.role === 'admin'
-    }
-  } catch {
-    // Auth not available
-  }
-
-  if (user && !isAdmin) {
+  if (session && session.user?.role !== 'admin') {
     redirect('/')
   }
 
@@ -65,7 +44,7 @@ export default async function AdminLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {!user ? (
+          {!session ? (
             <div className="min-h-screen flex items-center justify-center bg-zinc-950">
               <AdminLogin />
             </div>

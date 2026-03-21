@@ -247,8 +247,8 @@ export function AboutPageClient({ locale }: { locale: string }) {
                       ? "Configuration des environnements"
                       : "Environment setup",
                     locale === "fr"
-                      ? "Lancement avec partenaires"
-                      : "Launch with partners",
+                      ? "Lancement avec ambassadeurs"
+                      : "Launch with ambassadors",
                   ],
                 },
               ].map((phase, index) => (
@@ -325,11 +325,11 @@ export function AboutPageClient({ locale }: { locale: string }) {
                     : "I'm a creator"}
                 </Button>
               </Link>
-              <Link href="/soumettre-idee">
+              <Link href="/#applications">
                 <Button variant="secondary" size="lg">
                   {locale === "fr"
-                    ? "J'ai une idée de SaaS"
-                    : "I have a SaaS idea"}
+                    ? "Voir les produits"
+                    : "View products"}
                 </Button>
               </Link>
             </motion.div>

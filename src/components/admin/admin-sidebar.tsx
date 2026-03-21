@@ -3,16 +3,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
+import { signOut } from 'next-auth/react'
 import {
   LayoutDashboard,
   Package,
   Users,
-  Lightbulb,
-  FileText,
-  BarChart3,
-  Globe,
-  Settings,
+  UserPlus,
+  CreditCard,
   LogOut,
   Menu,
   X,
@@ -23,20 +20,15 @@ export function AdminSidebar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleLogout = async () => {
-    const supabase = createClient()
-    await supabase.auth.signOut()
-    window.location.reload()
+    await signOut({ redirect: true, callbackUrl: '/admin' })
   }
 
   const navItems = [
-    { label: 'Vue d\'ensemble', href: '/admin', icon: LayoutDashboard },
-    { label: 'SaaS', href: '/admin/saas', icon: Package },
-    { label: 'Créateurs', href: '/admin/createurs', icon: Users },
-    { label: 'Idées', href: '/admin/idees', icon: Lightbulb },
-    { label: 'Blog', href: '/admin/blog', icon: FileText },
-    { label: 'Métriques', href: '/admin/metriques', icon: BarChart3 },
-    { label: 'Contenu', href: '/admin/contenu', icon: Globe },
-    { label: 'Paramètres', href: '/admin/parametres', icon: Settings },
+    { label: 'Tableau de bord', href: '/admin', icon: LayoutDashboard },
+    { label: 'Candidatures', href: '/admin/candidatures', icon: UserPlus },
+    { label: 'Partenaires', href: '/admin/partenaires', icon: Users },
+    { label: 'Paiements', href: '/admin/paiements', icon: CreditCard },
+    { label: 'Applications', href: '/admin/applications', icon: Package },
   ]
 
   const isActive = (href: string) => {

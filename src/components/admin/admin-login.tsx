@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
+import { signIn } from 'next-auth/react'
 
 export function AdminLogin() {
   const [email, setEmail] = useState('')
@@ -17,14 +17,14 @@ export function AdminLogin() {
     setLoading(true)
 
     try {
-      const supabase = createClient()
-      const { error: authError } = await supabase.auth.signInWithPassword({
+      const result = await signIn('admin', {
         email,
         password,
+        redirect: false,
       })
 
-      if (authError) {
-        setError(authError.message)
+      if (result?.error) {
+        setError('Email ou mot de passe incorrect')
       } else {
         router.push('/admin')
         router.refresh()

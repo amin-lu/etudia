@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
-import { createClient } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from 'lucide-react';
 
@@ -12,7 +11,6 @@ type Platform = 'youtube' | 'tiktok' | 'instagram' | 'x' | 'linkedin' | 'twitch'
 
 export function ApplicationForm() {
   const t = useTranslations('creators.form');
-  const supabase = createClient();
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -21,9 +19,9 @@ export function ApplicationForm() {
     name: '',
     email: '',
     platform: 'youtube' as Platform,
-    profile_url: '',
-    followers_count: '',
-    niche: '',
+    profileUrl: '',
+    followers: '',
+    thematic: '',
     message: '',
   });
 
@@ -43,15 +41,15 @@ export function ApplicationForm() {
       toast.error(t('error'));
       return false;
     }
-    if (!formData.profile_url.trim()) {
+    if (!formData.profileUrl.trim()) {
       toast.error(t('error'));
       return false;
     }
-    if (!formData.followers_count.trim() || isNaN(Number(formData.followers_count))) {
+    if (!formData.followers.trim() || isNaN(Number(formData.followers))) {
       toast.error(t('error'));
       return false;
     }
-    if (!formData.niche.trim()) {
+    if (!formData.thematic.trim()) {
       toast.error(t('error'));
       return false;
     }
@@ -66,19 +64,25 @@ export function ApplicationForm() {
     setLoading(true);
 
     try {
-      const { error: dbError } = await supabase.from('creator_applications').insert({
-        name: formData.name,
-        email: formData.email,
-        platform: formData.platform,
-        profile_url: formData.profile_url,
-        followers_count: formData.followers_count,
-        niche: formData.niche,
-        message: formData.message || null,
-        status: 'pending',
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          platform: formData.platform,
+          profileUrl: formData.profileUrl,
+          followers: formData.followers,
+          thematic: formData.thematic,
+          message: formData.message || undefined,
+        }),
       });
 
-      if (dbError) {
-        throw dbError;
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Erreur lors de la soumission');
       }
 
       setSuccess(true);
@@ -87,14 +91,15 @@ export function ApplicationForm() {
         name: '',
         email: '',
         platform: 'youtube',
-        profile_url: '',
-        followers_count: '',
-        niche: '',
+        profileUrl: '',
+        followers: '',
+        thematic: '',
         message: '',
       });
 
       setTimeout(() => setSuccess(false), 5000);
     } catch (err) {
+      console.error(err);
       toast.error(t('error'));
     } finally {
       setLoading(false);
@@ -115,10 +120,10 @@ export function ApplicationForm() {
         <div className="flex flex-col items-center text-center">
           <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
           <h3 className="text-xl font-semibold text-foreground mb-2">
-            Candidature reçue
+            {t('successTitle')}
           </h3>
           <p className="text-foreground/70 text-sm">
-            Merci ! Nous examinerons votre candidature très bientôt.
+            {t('successMessage')}
           </p>
         </div>
       </motion.div>
@@ -202,8 +207,8 @@ export function ApplicationForm() {
         </label>
         <input
           type="url"
-          name="profile_url"
-          value={formData.profile_url}
+          name="profileUrl"
+          value={formData.profileUrl}
           onChange={handleChange}
           required
           className={cn(
@@ -223,8 +228,8 @@ export function ApplicationForm() {
         </label>
         <input
           type="number"
-          name="followers_count"
-          value={formData.followers_count}
+          name="followers"
+          value={formData.followers}
           onChange={handleChange}
           required
           min="0"
@@ -238,15 +243,15 @@ export function ApplicationForm() {
         />
       </div>
 
-      {/* Niche */}
+      {/* Thematic */}
       <div>
         <label className="block text-sm font-medium text-foreground mb-2">
           {t('fields.niche')}
         </label>
         <input
           type="text"
-          name="niche"
-          value={formData.niche}
+          name="thematic"
+          value={formData.thematic}
           onChange={handleChange}
           required
           className={cn(
@@ -289,7 +294,7 @@ export function ApplicationForm() {
           'text-white transition-colors duration-200'
         )}
       >
-        {loading ? t('submitting') : 'Soumettre ma candidature'}
+        {loading ? t('submitting') : t('submitButton')}
       </button>
     </form>
   );

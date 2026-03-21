@@ -2,68 +2,54 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { getAdminDashboardStats, getTopPartners } from '@/lib/actions/admin-prisma'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 const mockStats = {
-  pendingApplications: 0,
-  newIdeas7d: 0,
-  activeSaas: 0,
-  totalMrr: 0,
+  activePartners: 3,
+  totalReferrals: 47,
+  totalCommissions: 458.30,
+  currentMrr: 125.80,
 }
 
-export default function AdminOverview() {
+const mockMrrData = [
+  { month: 'Sept', mrr: 45 },
+  { month: 'Oct', mrr: 62 },
+  { month: 'Nov', mrr: 78 },
+  { month: 'Déc', mrr: 98 },
+  { month: 'Jan', mrr: 112 },
+  { month: 'Fév', mrr: 125.80 },
+]
+
+const mockTopPartners = [
+  { name: 'Sophie Bernard', totalReferrals: 23, totalCommissions: 245.60 },
+  { name: 'Lucas Petit', totalReferrals: 18, totalCommissions: 198.70 },
+  { name: 'Marie Dupont', totalReferrals: 6, totalCommissions: 14.00 },
+]
+
+export default function AdminDashboard() {
   const [stats, setStats] = useState(mockStats)
-  const [applications, setApplications] = useState<any[]>([])
-  const [ideas, setIdeas] = useState<any[]>([])
+  const [topPartners, setTopPartners] = useState(mockTopPartners)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const supabase = createClient()
-
-        const [appResponse, ideasResponse, saasResponse, metricsResponse] = await Promise.all([
-          supabase
-            .from('creator_applications')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(5),
-          supabase
-            .from('saas_ideas')
-            .select('*')
-            .order('votes_count', { ascending: false })
-            .limit(5),
-          supabase.from('saas_products').select('id').eq('status', 'live'),
-          supabase.from('metrics_snapshots').select('*').order('date', { ascending: false }).limit(1),
+        const [statsData, partnersData] = await Promise.all([
+          getAdminDashboardStats(),
+          getTopPartners(5),
         ])
 
-        if (appResponse.data) {
-          setApplications(appResponse.data)
-          setStats((prev) => ({
-            ...prev,
-            pendingApplications: appResponse.data.filter((a: any) => a.status === 'pending').length,
+        setStats(statsData)
+        setTopPartners(
+          partnersData.map((p: any) => ({
+            name: p.name,
+            totalReferrals: p.totalReferrals,
+            totalCommissions: p.totalCommissions,
           }))
-        }
-
-        if (ideasResponse.data) {
-          setIdeas(ideasResponse.data)
-        }
-
-        if (saasResponse.data) {
-          setStats((prev) => ({
-            ...prev,
-            activeSaas: saasResponse.data.length,
-          }))
-        }
-
-        if (metricsResponse.data && metricsResponse.data.length > 0) {
-          setStats((prev) => ({
-            ...prev,
-            totalMrr: metricsResponse.data[0].total_mrr,
-          }))
-        }
+        )
       } catch (error) {
-        console.error('Error fetching data:', error)
+        console.error('Error fetching dashboard stats:', error)
       } finally {
         setLoading(false)
       }
@@ -75,100 +61,95 @@ export default function AdminOverview() {
   const getStatusBadgeColor = (status: string) => {
     const colors: Record<string, string> = {
       pending: 'bg-yellow-500/20 text-yellow-400',
-      contacted: 'bg-blue-500/20 text-blue-400',
       accepted: 'bg-green-500/20 text-green-400',
       rejected: 'bg-red-500/20 text-red-400',
-      submitted: 'bg-zinc-600/20 text-zinc-400',
-      evaluating: 'bg-yellow-500/20 text-yellow-400',
-      built: 'bg-green-500/20 text-green-400',
+      active: 'bg-green-500/20 text-green-400',
+      suspended: 'bg-red-500/20 text-red-400',
     }
     return colors[status] || 'bg-zinc-600/20 text-zinc-400'
-  }
-
-  const formatDate = (date: string) => {
-    const d = new Date(date)
-    return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
   }
 
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Vue d'ensemble</h1>
-        <p className="text-zinc-400">Bienvenue sur votre tableau de bord admin</p>
+        <h1 className="text-4xl font-bold text-white mb-2">Tableau de bord</h1>
+        <p className="text-zinc-400">Vue d'ensemble de votre activité d'affiliation</p>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard label="Candidatures en attente" value={stats.pendingApplications} loading={loading} />
-        <StatCard label="Nouvelles idées (7j)" value={stats.newIdeas7d} loading={loading} />
-        <StatCard label="SaaS actifs" value={stats.activeSaas} loading={loading} />
-        <StatCard label="MRR total" value={stats.totalMrr} loading={loading} isCurrency />
+        <StatCard label="Partenaires actifs" value={stats.activePartners} loading={loading} />
+        <StatCard label="Inscriptions via affiliation" value={stats.totalReferrals} loading={loading} />
+        <StatCard label="Commissions générées" value={stats.totalCommissions} loading={loading} isCurrency />
+        <StatCard label="MRR actuel" value={stats.currentMrr} loading={loading} isCurrency />
       </div>
 
-      {/* Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Recent Applications */}
-        <Link href="/admin/createurs">
-          <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-6 hover:border-zinc-700 transition-colors cursor-pointer">
-            <h2 className="text-lg font-semibold text-white mb-4">Dernières candidatures</h2>
-            <div className="space-y-3">
-              {loading ? (
-                Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="h-16 bg-zinc-800 rounded-lg animate-pulse" />
-                ))
-              ) : applications.length === 0 ? (
-                <p className="text-zinc-400 text-sm">Aucune candidature</p>
-              ) : (
-                applications.slice(0, 5).map((app: any) => (
-                  <div key={app.id} className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50 hover:bg-zinc-800 transition-colors">
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-white truncate">{app.name}</p>
-                      <p className="text-sm text-zinc-400">
-                        {app.platform} • {formatDate(app.created_at)}
-                      </p>
-                    </div>
-                    <span className={`inline-block px-2 py-1 rounded text-xs font-medium whitespace-nowrap ml-2 ${getStatusBadgeColor(app.status)}`}>
-                      {app.status}
-                    </span>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        </Link>
+      <div className="rounded-xl bg-zinc-900 border border-zinc-700 p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Évolution MRR (6 mois)</h2>
+        <div className="h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={mockMrrData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
+              <XAxis dataKey="month" stroke="#a1a1aa" />
+              <YAxis stroke="#a1a1aa" />
+              <Tooltip
+                contentStyle={{ backgroundColor: '#18181b', border: '1px solid #3f3f46', borderRadius: '0.75rem' }}
+                labelStyle={{ color: '#ffffff' }}
+              />
+              <Line type="monotone" dataKey="mrr" stroke="#6366f1" strokeWidth={2} dot={{ fill: '#6366f1' }} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
 
-        {/* Top Ideas */}
-        <Link href="/admin/idees">
-          <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-6 hover:border-zinc-700 transition-colors cursor-pointer">
-            <h2 className="text-lg font-semibold text-white mb-4">Idées les plus votées</h2>
-            <div className="space-y-3">
+      <div className="rounded-xl bg-zinc-900 border border-zinc-700 p-6">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-lg font-semibold text-white">Top 5 partenaires du mois</h2>
+          <Link href="/admin/partenaires" className="text-sm text-indigo-400 hover:text-indigo-300">
+            Voir tous →
+          </Link>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-zinc-700">
+                <th className="text-left py-3 px-4 text-sm font-medium text-zinc-400">Nom</th>
+                <th className="text-right py-3 px-4 text-sm font-medium text-zinc-400">Inscriptions</th>
+                <th className="text-right py-3 px-4 text-sm font-medium text-zinc-400">Commissions</th>
+              </tr>
+            </thead>
+            <tbody>
               {loading ? (
                 Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="h-16 bg-zinc-800 rounded-lg animate-pulse" />
+                  <tr key={i} className="border-b border-zinc-800/50">
+                    <td className="py-4 px-4">
+                      <div className="h-4 bg-zinc-800 rounded w-32 animate-pulse" />
+                    </td>
+                    <td className="py-4 px-4">
+                      <div className="h-4 bg-zinc-800 rounded w-16 animate-pulse" />
+                    </td>
+                    <td className="py-4 px-4">
+                      <div className="h-4 bg-zinc-800 rounded w-24 animate-pulse" />
+                    </td>
+                  </tr>
                 ))
-              ) : ideas.length === 0 ? (
-                <p className="text-zinc-400 text-sm">Aucune idée</p>
+              ) : topPartners.length === 0 ? (
+                <tr>
+                  <td colSpan={3} className="py-8 text-center text-zinc-400">
+                    Aucun partenaire
+                  </td>
+                </tr>
               ) : (
-                ideas.slice(0, 5).map((idea: any) => (
-                  <div key={idea.id} className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50 hover:bg-zinc-800 transition-colors">
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-white truncate">{idea.name}</p>
-                      <p className="text-sm text-zinc-400">{idea.niche}</p>
-                    </div>
-                    <div className="flex items-center gap-2 ml-2">
-                      <span className="inline-block px-2 py-1 rounded text-xs font-medium bg-indigo-500/20 text-indigo-400 whitespace-nowrap">
-                        {idea.votes_count} votes
-                      </span>
-                      <span className={`inline-block px-2 py-1 rounded text-xs font-medium whitespace-nowrap ${getStatusBadgeColor(idea.status)}`}>
-                        {idea.status}
-                      </span>
-                    </div>
-                  </div>
+                topPartners.map((partner, idx) => (
+                  <tr key={idx} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
+                    <td className="py-4 px-4 text-white font-medium">{partner.name}</td>
+                    <td className="py-4 px-4 text-right text-white">{partner.totalReferrals}</td>
+                    <td className="py-4 px-4 text-right text-white">{partner.totalCommissions.toFixed(2)}€</td>
+                  </tr>
                 ))
               )}
-            </div>
-          </div>
-        </Link>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )
@@ -186,7 +167,7 @@ function StatCard({
   isCurrency?: boolean
 }) {
   return (
-    <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-6">
+    <div className="rounded-xl bg-zinc-900 border border-zinc-700 p-6">
       <div className="space-y-2">
         <p className="text-sm text-zinc-400">{label}</p>
         <p className="text-3xl font-bold text-white">

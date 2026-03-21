@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/home/hero'
-import { MetricsBand } from '@/components/home/metrics-band'
-import { HowItWorksSummary } from '@/components/home/how-it-works-summary'
+import { MethodSection } from '@/components/home/method-section'
 import { FeaturedSaas } from '@/components/home/featured-saas'
-import { IdeasTeaser } from '@/components/home/ideas-teaser'
-import { WhyCreators } from '@/components/home/why-creators'
-import { CtaSection } from '@/components/home/cta-section'
+import { AmbassadorSection } from '@/components/home/ambassador-section'
 
 interface PageProps {
   params: Promise<{
@@ -16,8 +13,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   return {
-    title: locale === 'fr' ? 'Etudia — Monétise ta communauté avec des outils digitaux' : 'Etudia — Monetize your community with digital tools',
-    description: locale === 'fr' ? 'Tu es créateur de contenu ? Recommande des applications utiles à ta communauté et touche jusqu\'à 50% de commission chaque mois.' : 'You create content? Recommend useful tools to your community and earn up to 50% commission every month.',
+    title: locale === 'fr' ? 'Etudia — Des apps d\'apprentissage conçues par la science' : 'Etudia — Learning apps built on cognitive science',
+    description: locale === 'fr' ? 'Applications d\'apprentissage pour chaque filière. Répétition espacée, rappel actif et gamification au cœur de chaque produit.' : 'Learning apps for every field. Spaced repetition, active recall and gamification at the core of every product.',
     openGraph: { images: ['/og-image.png'] },
   }
 }
@@ -26,12 +23,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <MetricsBand />
-      <HowItWorksSummary />
+      <MethodSection />
       <FeaturedSaas />
-      <WhyCreators />
-      <IdeasTeaser />
-      <CtaSection />
+      <AmbassadorSection />
     </>
   )
 }

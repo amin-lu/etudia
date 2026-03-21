@@ -220,13 +220,7 @@ VALUES
    'Malian baccalaureate preparation — all series, quizzes and flashcards.',
    'BacSuccess couvre les 6 séries du baccalauréat malien (TSECO, TSEXP, TSS, TSE, TLL, TAL) avec un moteur de quiz, des flashcards, la répétition espacée et un mode sombre.',
    'BacSuccess covers all 6 series of the Malian baccalaureate (TSECO, TSEXP, TSS, TSE, TLL, TAL) with a quiz engine, flashcards, spaced repetition and dark mode.',
-   'Éducation', 'Education', 40, 0, 'live', 0, 0, NOW() - INTERVAL '60 days', true, 2),
-
-  ('fittrack-pro', 'FitTrack Pro', 'FitTrack Pro',
-   'Suivi nutritionnel et programmes d''entraînement personnalisés.',
-   'Nutritional tracking and personalized training programs.',
-   NULL, NULL,
-   'Fitness', 'Fitness', 45, 9.90, 'coming_soon', 0, 0, NULL, false, 3);
+   'Éducation', 'Education', 40, 0, 'live', 0, 0, NOW() - INTERVAL '60 days', true, 2);
 
 INSERT INTO saas_ideas (name, niche, problem, target_audience, has_audience, suggested_price, submitter_email, votes_count, status)
 VALUES

@@ -2,23 +2,12 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
-import { Youtube, Linkedin, Twitter, Globe } from 'lucide-react'
+import { Globe } from 'lucide-react'
 
 const navLinks = [
-  { href: '/catalogue', key: 'catalogue' },
+  { href: '/#applications', key: 'apps' },
   { href: '/devenir-partenaire', key: 'creators' },
-  { href: '/soumettre-idee', key: 'ideas' },
   { href: '/a-propos', key: 'about' },
-]
-
-const resourceLinks = [
-  { href: '/comment-ca-marche', key: 'howItWorks' },
-]
-
-const socialLinks = [
-  { href: 'https://youtube.com', icon: Youtube, label: 'YouTube' },
-  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://x.com', icon: Twitter, label: 'X (Twitter)' },
 ]
 
 export function Footer() {
@@ -33,46 +22,33 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+    <footer className="border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#0a0a1a]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <Link href="/" className="inline-block">
               <span className="text-xl font-bold font-[family-name:var(--font-display)]">
                 <span className="text-foreground">etudia</span>
                 <span className="text-indigo-500">.</span>
               </span>
             </Link>
-            <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400 max-w-xs">
+            <p className="mt-4 text-sm text-slate-500 dark:text-white/40 max-w-xs leading-relaxed">
               {t('footer.tagline')}
             </p>
-            {/* Social links */}
-            <div className="mt-4 flex gap-2">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xl p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50 mb-3">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-white/80 mb-4 uppercase tracking-wider">
+              Navigation
+            </h3>
+            <ul className="space-y-3">
               {navLinks.map((item) => (
                 <li key={item.key}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
+                    className="text-sm text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white transition-colors"
                   >
                     {t(`nav.${item.key}`)}
                   </Link>
@@ -81,58 +57,48 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Ressources */}
+          {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50 mb-3">
-              {t('footer.resources')}
-            </h3>
-            <ul className="space-y-2">
-              {resourceLinks.map((item) => (
-                <li key={item.key}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
-                  >
-                    {t(`nav.${item.key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Légal */}
-          <div>
-            <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50 mb-3">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-white/80 mb-4 uppercase tracking-wider">
               {locale === 'fr' ? 'Légal' : 'Legal'}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400 cursor-default">
-                  {locale === 'fr' ? 'Conditions générales' : 'Terms of Service'}
-                </span>
+                <Link
+                  href="/legal/mentions-legales"
+                  className="text-sm text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white transition-colors"
+                >
+                  {t('footer.legal')}
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400 cursor-default">
-                  {locale === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'}
-                </span>
+                <Link
+                  href="/legal/confidentialite"
+                  className="text-sm text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white transition-colors"
+                >
+                  {t('footer.privacy')}
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400 cursor-default">
-                  {locale === 'fr' ? 'Mentions légales' : 'Legal Notice'}
-                </span>
+                <Link
+                  href="/legal/conditions-generales"
+                  className="text-sm text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white transition-colors"
+                >
+                  {t('footer.terms')}
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-zinc-600 dark:text-zinc-400">
+        <div className="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-400 dark:text-white/30">
             © {new Date().getFullYear()} Etudia. {t('footer.rights')}
           </p>
           <button
             onClick={switchLocale}
-            className="flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs text-slate-400 dark:text-white/30 hover:text-slate-900 dark:hover:text-white transition-colors"
             aria-label="Switch language"
           >
             <Globe className="h-3.5 w-3.5" />

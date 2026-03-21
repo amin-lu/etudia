@@ -3,22 +3,23 @@
 import React, { forwardRef } from "react"
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "default" | "success" | "warning" | "info" | "danger" | "niche" | "secondary"
+  variant?: "default" | "success" | "warning" | "info" | "danger" | "niche" | "secondary" | "emerald"
   className?: string
 }
 
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   ({ variant = "default", className = "", ...props }, ref) => {
-    const baseStyles = "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium"
+    const baseStyles = "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wide"
 
     const variantStyles = {
-      default: "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200",
-      success: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400",
-      warning: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400",
-      info: "bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400",
-      danger: "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400",
-      niche: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400",
-      secondary: "bg-zinc-700 dark:bg-zinc-700 text-zinc-100 dark:text-zinc-100",
+      default: "bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-white/70",
+      success: "bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400",
+      warning: "bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-400",
+      info: "bg-indigo-100 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-400",
+      danger: "bg-red-100 dark:bg-red-500/15 text-red-700 dark:text-red-400",
+      niche: "bg-purple-100 dark:bg-purple-500/15 text-purple-700 dark:text-purple-400",
+      secondary: "bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-white/70",
+      emerald: "bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
     }
 
     return (

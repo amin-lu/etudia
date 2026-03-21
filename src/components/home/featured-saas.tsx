@@ -2,12 +2,29 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import { motion } from 'framer-motion'
-import { Link } from '@/i18n/routing'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { TrendingUp, ExternalLink } from 'lucide-react'
+import { TrendingUp, ExternalLink, Clock } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  },
+}
 
 interface FeaturedSaaS {
   id: string
@@ -15,7 +32,6 @@ interface FeaturedSaaS {
   name: string
   niche: string
   description: string
-  activeUsers: number
   commissionRate: number
   status: 'live' | 'coming_soon'
   price: number
@@ -23,12 +39,9 @@ interface FeaturedSaaS {
 }
 
 export function FeaturedSaas() {
-  const t = useTranslations('catalogue.card')
-  const catT = useTranslations('catalogue')
   const homeT = useTranslations('home.featured')
   const locale = useLocale()
 
-  // Mock data with realistic numbers (0 users, real prices)
   const saasList: FeaturedSaaS[] = [
     {
       id: '1',
@@ -38,7 +51,6 @@ export function FeaturedSaas() {
       description: locale === 'fr'
         ? 'Plateforme de révision structurée pour les étudiants en BTS Diététique.'
         : 'Structured revision platform for BTS Dietetics students.',
-      activeUsers: 0,
       commissionRate: 40,
       status: 'live',
       price: 12.90,
@@ -52,7 +64,6 @@ export function FeaturedSaas() {
       description: locale === 'fr'
         ? 'Préparation au baccalauréat malien — toutes séries, quiz et flashcards.'
         : 'Malian baccalaureate preparation — all series, quizzes and flashcards.',
-      activeUsers: 0,
       commissionRate: 40,
       status: 'live',
       price: 0,
@@ -60,33 +71,37 @@ export function FeaturedSaas() {
     },
     {
       id: '3',
-      slug: 'fittrack-pro',
-      name: 'FitTrack Pro',
-      niche: 'Fitness',
+      slug: 'droit',
+      name: 'EtuDroit',
+      niche: locale === 'fr' ? 'Droit' : 'Law',
       description: locale === 'fr'
-        ? 'Suivi nutritionnel et programmes d\'entraînement personnalisés.'
-        : 'Nutritional tracking and personalized training programs.',
-      activeUsers: 0,
-      commissionRate: 45,
+        ? 'Révision des matières juridiques — droit civil, pénal, constitutionnel. QCM et fiches.'
+        : 'Law revision — civil, criminal, constitutional law. Quizzes and study sheets.',
+      commissionRate: 40,
       status: 'coming_soon',
-      price: 9.90,
+      price: 0,
+      externalUrl: null,
+    },
+    {
+      id: '4',
+      slug: 'medecine',
+      name: 'EtuMed',
+      niche: locale === 'fr' ? 'Médecine' : 'Medicine',
+      description: locale === 'fr'
+        ? 'Préparation aux examens de médecine — anatomie, physiologie, pharmacologie.'
+        : 'Medical exam preparation — anatomy, physiology, pharmacology.',
+      commissionRate: 40,
+      status: 'coming_soon',
+      price: 0,
       externalUrl: null,
     },
   ]
 
-  const getStatusBadge = (status: string, activeUsers: number) => {
-    if (activeUsers === 0) {
-      return <Badge variant="info">{catT('metricsNew')}</Badge>
-    }
-    if (status === 'live') {
-      return <Badge variant="success">En ligne</Badge>
-    }
-    return <Badge variant="info">Bientôt</Badge>
-  }
+  const isComingSoon = (status: string) => status === 'coming_soon'
 
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-card/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="applications" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50/50 dark:bg-white/[0.02]">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -94,96 +109,98 @@ export function FeaturedSaas() {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5, ease: 'easeOut' as const }}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold font-[family-name:var(--font-display)] text-foreground mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-display)] text-foreground mb-5 tracking-tight">
             {homeT('title')}
           </h2>
-          <p className="text-foreground/70 text-lg">{homeT('subtitle')}</p>
+          <p className="text-slate-600 dark:text-white/50 text-lg">{homeT('subtitle')}</p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
-          initial={{}}
-          whileInView={{ transition: { staggerChildren: 0.1 } }}
-          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
         >
           {saasList.map((saas) => (
             <motion.div
               key={saas.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, ease: 'easeOut' as const }}
-              whileHover={{ y: -8 }}
+              variants={itemVariants}
+              whileHover={!isComingSoon(saas.status) ? { y: -4 } : undefined}
+              transition={{ duration: 0.2 }}
+              className={isComingSoon(saas.status) ? 'opacity-50' : 'group'}
             >
-              <Card variant="interactive" className="h-full flex flex-col">
-                <CardContent className="pt-6 flex flex-col flex-1">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {saas.name}
-                      </h3>
+              <div className="h-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-8 card-glow">
+                {/* Top row: name + badges */}
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
+                      {saas.name}
+                    </h3>
+                    <div className="flex items-center gap-2">
                       <Badge variant="niche" className="text-xs">
                         {saas.niche}
                       </Badge>
+                      {isComingSoon(saas.status) && (
+                        <Badge variant="info" className="text-xs">
+                          {locale === 'fr' ? 'Prochainement' : 'Coming soon'}
+                        </Badge>
+                      )}
                     </div>
                   </div>
+                  {!isComingSoon(saas.status) && (
+                    <Badge variant="emerald" className="text-xs shrink-0">
+                      <TrendingUp className="w-3 h-3 mr-1" />
+                      {saas.commissionRate}%
+                    </Badge>
+                  )}
+                </div>
 
-                  <p className="text-foreground/70 text-sm mb-6 flex-1">
-                    {saas.description}
-                  </p>
+                {/* Description */}
+                <p className="text-slate-500 dark:text-white/40 text-sm mb-6 leading-relaxed">
+                  {saas.description}
+                </p>
 
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-accent font-semibold text-lg">
-                      <TrendingUp className="w-5 h-5" />
-                      <span>{saas.commissionRate}% {locale === 'fr' ? 'de commission' : 'commission'}</span>
+                {/* Bottom */}
+                <div className="flex items-center justify-between pt-5 border-t border-slate-100 dark:border-white/5">
+                  {!isComingSoon(saas.status) && saas.price > 0 && (
+                    <span className="text-foreground font-semibold">
+                      {formatPrice(saas.price, locale)}<span className="text-sm text-slate-400 dark:text-white/30 font-normal">/{locale === 'fr' ? 'mois' : 'mo'}</span>
+                    </span>
+                  )}
+                  {!isComingSoon(saas.status) && saas.price === 0 && (
+                    <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+                      {locale === 'fr' ? 'Gratuit' : 'Free'}
+                    </span>
+                  )}
+                  {isComingSoon(saas.status) && (
+                    <div className="flex items-center gap-1.5 text-slate-400 dark:text-white/30 text-sm">
+                      <Clock className="w-4 h-4" />
+                      <span>{locale === 'fr' ? 'En préparation' : 'In development'}</span>
                     </div>
-                    {saas.price > 0 && (
-                      <div className="text-foreground/70 text-sm">
-                        {formatPrice(saas.price, locale)}/{locale === 'fr' ? 'mois' : 'mo'}
-                      </div>
-                    )}
-                    {saas.price === 0 && (
-                      <div className="text-green-600 dark:text-green-400 text-sm font-medium">
-                        {locale === 'fr' ? 'Gratuit' : 'Free'}
-                      </div>
-                    )}
-                  </div>
+                  )}
 
-                  <div className="flex items-center justify-between pt-4 border-t border-card-border gap-2">
-                    <Link href={`/catalogue/${saas.slug}`} className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
-                      {catT('viewDetails')} →
-                    </Link>
-                    {saas.externalUrl && saas.status === 'live' && (
-                      <a
-                        href={saas.externalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg bg-indigo-600 dark:bg-indigo-500 text-white hover:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors"
-                      >
-                        {locale === 'fr' ? 'Voir le site' : 'Visit site'}
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                    {!saas.externalUrl && getStatusBadge(saas.status, saas.activeUsers)}
-                  </div>
-                </CardContent>
-              </Card>
+                  {!isComingSoon(saas.status) && saas.externalUrl && (
+                    <a
+                      href={saas.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg bg-indigo-600 dark:bg-indigo-500 text-white hover:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors"
+                    >
+                      {locale === 'fr' ? 'Voir le site' : 'Visit site'}
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+
+                  {isComingSoon(saas.status) && (
+                    <span className="text-sm text-slate-300 dark:text-white/20">
+                      {locale === 'fr' ? 'Bientôt disponible' : 'Available soon'}
+                    </span>
+                  )}
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        >
-          <Link href="/catalogue">
-            <Button variant="secondary" size="lg">
-              {homeT('cta')}
-            </Button>
-          </Link>
         </motion.div>
       </div>
     </section>

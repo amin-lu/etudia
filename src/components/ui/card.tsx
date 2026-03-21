@@ -13,10 +13,10 @@ interface CardProps {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ variant = "default", className = "", children, onClick }, ref) => {
     const baseStyles =
-      "rounded-xl border bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-6"
+      "rounded-2xl border bg-white dark:bg-white/[0.03] border-slate-200 dark:border-white/10 p-6"
     const variantStyles = {
       default: "",
-      interactive: "cursor-pointer transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-700",
+      interactive: "cursor-pointer card-glow",
     }
 
     if (variant === "interactive") {
@@ -24,7 +24,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
         <motion.div
           ref={ref}
           className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-          whileHover={{ y: -4, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
+          whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
           onClick={onClick}
         >

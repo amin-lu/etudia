@@ -2,15 +2,12 @@
   "common": {
     "nav": {
       "home": "Home",
-      "catalogue": "Products",
-      "creators": "Become Partner",
-      "ideas": "How It Works",
-      "howItWorks": "How It Works",
-      "dashboard": "Dashboard",
-      "blog": "Blog",
+      "apps": "Our Apps",
+      "method": "Our Method",
+      "creators": "Become Ambassador",
       "about": "About",
       "admin": "Admin",
-      "partnerArea": "Partner Area"
+      "partnerArea": "Ambassador Area"
     },
     "buttons": {
       "learnMore": "Learn More",
@@ -63,211 +60,62 @@
   },
   "home": {
     "hero": {
-      "title": "You create content? We have the perfect tool for your community.",
-      "subtitle": "We build apps for every topic — education, fitness, nutrition, and more. You share them with your community. And you earn 30 to 50% commission every month. No coding, no investment.",
-      "cta1": "Discover products",
-      "cta2": "Become a partner"
+      "title": "Better apps to learn better. Built on cognitive science.",
+      "subtitle": "Etudia builds learning apps for every subject that deserves a better tool — degrees, exams, skills. Spaced repetition, active recall and gamification at the core.",
+      "cta1": "Explore our apps",
+      "cta2": "Become an ambassador"
     },
-    "howItWorks": {
-      "title": "How does it work?",
-      "step1": {
-        "title": "Choose your product",
-        "description": "Browse our catalog and find the app that matches your topic and audience."
+    "method": {
+      "title": "Science-backed learning",
+      "subtitle": "Every Etudia app is built on principles proven by cognitive science research.",
+      "spacedRepetition": {
+        "title": "Spaced repetition",
+        "description": "The algorithm identifies what you're forgetting and shows it again at the optimal time."
       },
-      "step2": {
-        "title": "Share with your community",
-        "description": "We give you your personal link, visuals, content ideas. Share it your way: video, story, post."
+      "testingEffect": {
+        "title": "Testing effect",
+        "description": "Testing yourself is more effective than re-reading. Our apps are built around quizzes and active exercises."
       },
-      "step3": {
-        "title": "Earn your commission every month",
-        "description": "Every person who subscribes through your link earns you 30 to 50% commission. Every month, as long as they stay subscribed."
+      "gamification": {
+        "title": "Gamification",
+        "description": "Streaks, XP, visible progress — every session brings you closer to your goal."
+      },
+      "examFormat": {
+        "title": "Real exam format",
+        "description": "Practice in the exact conditions of your exam. Each app mirrors the real test format."
       }
-    },
-    "stats": {
-      "saasBuilt": "Active apps",
-      "creatorsPartnered": "Creator partners",
-      "revenue": "Redistributed to creators"
     },
     "featured": {
-      "title": "Our available apps",
-      "subtitle": "Tools ready to recommend",
-      "cta": "View all products"
+      "title": "One app per subject. Yours might already be ready.",
+      "subtitle": "Learning tools built for every field — ready to recommend."
     },
-    "ideas": {
-      "title": "Got a product idea for your community?",
-      "subtitle": "Tell us what tool is missing for your topic. If the idea is good, we'll build it and you'll be the first to promote it.",
-      "cta": "Suggest an idea"
-    },
-    "testimonials": {
-      "title": "What Our Partners Say",
-      "cta": "Read All Reviews"
-    },
-    "whyCreators": {
-      "title": "Why creators choose us",
-      "item1": {
-        "title": "Recurring revenue",
-        "description": "No more one-shot sponsored posts. Each subscriber earns you money every month."
-      },
-      "item2": {
-        "title": "Zero hassle",
-        "description": "No inventory, no customer support, no code. We handle everything. You focus on your content."
-      },
-      "item3": {
-        "title": "Products that truly help",
-        "description": "We don't sell hot air. Every app solves a real problem for your community."
-      },
-      "item4": {
-        "title": "Full transparency",
-        "description": "Track your earnings in real-time from your personal dashboard."
-      }
-    },
-    "cta": {
-      "title": "Ready to monetize your community differently?",
-      "subtitle": "Join creators who recommend useful tools to their audience and earn a commission every month.",
-      "partner": "Become a partner",
-      "idea": "See products"
-    }
-  },
-  "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "A win-win-win model",
-    "actors": {
-      "studio": {
-        "title": "Etudia",
-        "description": "We build innovative apps for specific topics"
-      },
-      "creators": {
-        "title": "The Creators",
-        "description": "You distribute to your audience and earn commissions"
-      },
-      "users": {
-        "title": "The Users",
-        "description": "You discover tools recommended by trusted creators"
-      }
-    },
-    "whyItWorks": {
-      "title": "Why It Works",
-      "etudia": {
-        "title": "For Etudia",
-        "point1": "No customer acquisition cost",
-        "point2": "Organic distribution through partners",
-        "point3": "Continuous market validation"
-      },
-      "creators": {
-        "title": "For Creators",
-        "point1": "Recurring monetization without investment",
-        "point2": "Attractive and regular commissions",
-        "point3": "Complete marketing support"
-      },
-      "users": {
-        "title": "For Users",
-        "point1": "Products recommended by someone you trust",
-        "point2": "Tools built for real needs",
-        "point3": "Access to innovative solutions"
-      }
-    },
-    "process": {
-      "title": "The Building Process",
+    "ambassador": {
+      "title": "You create educational content? Your audience deserves the best tools.",
+      "subtitle": "Join the Etudia ambassador program. Recommend our apps and earn a commission on every subscription.",
       "step1": {
-        "number": "01",
-        "title": "Idea",
-        "description": "We identify a topic with an unmet need"
+        "title": "Pick your app",
+        "description": "Choose the app that fits your niche."
       },
       "step2": {
-        "number": "02",
-        "title": "Validation",
-        "description": "We validate the market and community interest"
+        "title": "Share with your audience",
+        "description": "We give you your personal link, visuals and content ideas."
       },
       "step3": {
-        "number": "03",
-        "title": "Building",
-        "description": "Our team builds high-quality apps in 30 days"
+        "title": "Earn your commission monthly",
+        "description": "30 to 50% recurring commission on every subscription."
       },
-      "step4": {
-        "number": "04",
-        "title": "Launch",
-        "description": "Public launch and real-time metrics"
-      },
-      "step5": {
-        "number": "05",
-        "title": "Distribution",
-        "description": "Partner creators distribute it to their audience"
-      }
-    },
-    "transparency": {
-      "title": "Building in Public",
-      "description": "At Etudia, we believe in transparency. Check our public dashboard to see real-time performance of our apps, generated revenues, and the impact of our partners.",
-      "cta": "View Dashboard"
+      "cta": "Join the ambassador program",
+      "trust": "Free signup · No commitment · Monthly automatic payout"
     }
-  },
-  "catalogue": {
-    "title": "Our applications",
-    "subtitle": "Find the tool that matches your topic",
-    "search": "Search an app...",
-    "searchPlaceholder": "Search for an app...",
-    "filters": "Filters",
-    "filterNiche": "Topic",
-    "filterStatus": "Status",
-    "filterCommission": "Commission",
-    "statusLive": "Live",
-    "statusComingSoon": "Coming Soon",
-    "statusInConstruction": "Building",
-    "commissionAll": "All",
-    "commissionLow": "30-39%",
-    "commissionHigh": "40%+",
-    "metrics": "Metrics",
-    "activeUsers": "Active Users",
-    "mrr": "Monthly Revenue",
-    "launchDate": "Launch Date",
-    "commission": "Commission",
-    "screenshots": "Preview",
-    "promoteThisSaas": "Promote this app",
-    "accessSaas": "Access app",
-    "notAvailable": "Coming Soon",
-    "backToCatalogue": "Back to catalogue",
-    "noResults": "No apps found",
-    "tryAdjustingFilters": "Try adjusting your filters",
-    "viewAll": "View full catalogue",
-    "viewDetails": "View details",
-    "features": "Features",
-    "pricing": "Pricing",
-    "pricingFrom": "Starting at {price}/month",
-    "pricingFree": "Free",
-    "promoteTitle": "Promote this app",
-    "promoteCommission": "{rate}% on every subscription",
-    "promoteSubtext": "Get your affiliate link and start earning",
-    "promoteApply": "Apply as partner",
-    "metricsNew": "New",
-    "newBadge": "New",
-    "comingSoonMessage": "This app is under construction",
-    "comingSoonSubtext": "Come back soon to discover this product!",
-    "filters_old": {
-      "category": "Category",
-      "pricing": "Pricing",
-      "status": "Status",
-      "allCategories": "All Categories",
-      "free": "Free",
-      "paid": "Paid",
-      "launched": "Launched",
-      "coming_soon": "Coming Soon"
-    },
-    "card": {
-      "viewDetails": "View Details",
-      "tryNow": "Try Now",
-      "distribute": "Become Partner",
-      "users": "active users",
-      "revenue": "in revenue generated"
-    },
-    "empty": "No apps match your search"
   },
   "creators": {
     "hero": {
       "title": "Got an audience? Turn it into recurring revenue.",
       "subtitle": "We provide you with an app ready to recommend, you share it with your community, you earn your commission every month.",
-      "cta": "Become Partner"
+      "cta": "Become Ambassador"
     },
     "advantages": {
-      "title": "Why Become a Partner?",
+      "title": "Why Become an Ambassador?",
       "items": {
         "commission": {
           "title": "30-50% commission",
@@ -350,7 +198,7 @@
     },
     "form": {
       "title": "Join Us",
-      "subtitle": "Fill out the form to become a partner",
+      "subtitle": "Fill out the form to become an ambassador",
       "fields": {
         "name": "Full Name",
         "email": "Email",
@@ -367,99 +215,16 @@
         "profileUrl": "https://youtube.com/@yourprofile",
         "followersCount": "10000",
         "niche": "Ex: Tech, Marketing, Fitness",
-        "message": "Tell us why you'd like to become a partner..."
+        "message": "Tell us why you'd like to become an ambassador..."
       },
       "optional": "optional",
       "submitting": "Submitting...",
+      "submitButton": "Submit my application",
+      "successTitle": "Application received",
+      "successMessage": "Thank you! We will review your application very soon.",
       "success": "Application submitted successfully!",
       "error": "Something went wrong. Please try again."
     }
-  },
-  "ideas": {
-    "title": "Suggest a tool for your community",
-    "subtitle": "You know your audience's needs better than anyone. Tell us what tool they're missing, and if the idea is good, we'll build it.",
-    "description": "Help us identify the next topics to explore. Your best ideas could become our next apps.",
-    "form": {
-      "title": "New Idea",
-      "saasName": "Tool name",
-      "niche": "Topic",
-      "problem": "Problem to solve",
-      "targetAudience": "Target audience",
-      "hasAudience": "I have an audience to promote this tool",
-      "audienceDetails": "Audience details",
-      "suggestedPrice": "Suggested price (€/month)",
-      "email": "Email",
-      "optional": "(optional)",
-      "submit": "Submit idea",
-      "submitting": "Sending...",
-      "success": "Idea submitted successfully!",
-      "error": "Something went wrong. Please try again."
-    },
-    "wall": {
-      "title": "Community ideas",
-      "sortVotes": "Most voted",
-      "sortRecent": "Most recent",
-      "loading": "Loading...",
-      "noIdeas": "No ideas yet.",
-      "alreadyVoted": "You already voted for this idea.",
-      "voteSuccess": "Vote recorded!",
-      "statusUnderReview": "Under consideration",
-      "statusProposed": "Proposed"
-    }
-  },
-  "dashboard": {
-    "title": "Our numbers, in full transparency",
-    "publicTitle": "Public Dashboard",
-    "publicSubtitle": "Full transparency on studio metrics",
-    "welcome": "Welcome",
-    "overview": "Overview",
-    "totalMrr": "Total Monthly Revenue",
-    "activeSaas": "Active apps",
-    "totalCreators": "Creator Partners",
-    "totalRedistributed": "Total Redistributed",
-    "totalUsers": "Total Users",
-    "mrrEvolution": "Revenue Evolution",
-    "nicheDistribution": "Distribution by Topic",
-    "metrics": {
-      "totalSales": "Total Sales",
-      "totalRevenue": "Total Revenue",
-      "activeProducts": "Active Products",
-      "conversionRate": "Conversion Rate",
-      "avgOrderValue": "Average Order Value",
-      "newClients": "New Clients",
-      "users": "Active Users"
-    },
-    "charts": {
-      "salesOverTime": "Sales Over Time",
-      "revenueByProduct": "Revenue by Product",
-      "conversionFunnel": "Conversion Funnel",
-      "topPerformers": "Top Partners",
-      "userGrowth": "User Growth"
-    },
-    "actions": {
-      "viewDetails": "View Details",
-      "export": "Export",
-      "refresh": "Refresh"
-    }
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "News and insights from Etudia",
-    "readMore": "Read More",
-    "published": "Published on",
-    "by": "by",
-    "readTime": "min read",
-    "categories": {
-      "news": "News",
-      "tips": "Tips",
-      "tutorials": "Tutorials",
-      "case_studies": "Case Studies",
-      "features": "Features"
-    },
-    "tags": "Tags",
-    "search": "Search an article...",
-    "noResults": "No articles yet",
-    "relatedArticles": "Related Articles"
   },
   "about": {
     "title": "Who's Behind Etudia?",
@@ -493,7 +258,7 @@
     },
     "program": {
       "title": "How We Build a Product",
-      "description": "Our process has been optimized to build a complete and functional application in just 30 days. From market validation to production launch, with our creator partners."
+      "description": "Our process has been optimized to build a complete and functional application in just 30 days. From market validation to production launch, with our creator ambassadors."
     },
     "cta": {
       "title": "Join the adventure",
@@ -502,14 +267,14 @@
   },
   "partner": {
     "login": {
-      "title": "Partner Login",
+      "title": "Ambassador Login",
       "subtitle": "Access your area to track your earnings and manage your links.",
       "email": "Email",
       "password": "Password",
       "submit": "Sign In",
       "forgotPassword": "Forgot password?",
-      "noAccount": "Not a partner yet?",
-      "becomePartner": "Become a partner",
+      "noAccount": "Not an ambassador yet?",
+      "becomePartner": "Become an ambassador",
       "error": "Invalid email or password.",
       "loading": "Signing in..."
     },
@@ -520,7 +285,108 @@
       "submit": "Send Reset Link",
       "success": "If an account exists with this email, you'll receive a reset link.",
       "backToLogin": "Back to login"
+    },
+    "sidebar": {
+      "overview": "Overview",
+      "links": "My Links",
+      "revenue": "My Revenue",
+      "assets": "Marketing Assets",
+      "profile": "My Profile",
+      "logout": "Logout"
+    },
+    "dashboard": {
+      "welcome": "Hello, {name}",
+      "referralLink": "Your referral link",
+      "copyLink": "Copy link",
+      "copied": "Copied",
+      "stats": {
+        "registrationsMonth": "Registrations this month",
+        "registrationsTotal": "Total registrations",
+        "commissionMonth": "Commission this month",
+        "commissionTotal": "Total commission"
+      },
+      "chart": {
+        "title": "Registrations over last 6 months"
+      },
+      "table": {
+        "title": "Latest referrals",
+        "date": "Date",
+        "product": "Product",
+        "status": "Status",
+        "active": "Active",
+        "churned": "Churned"
+      }
+    },
+    "links": {
+      "title": "My affiliate links",
+      "subtitle": "Copy and share your personalized links for each product",
+      "clicks": "Clicks",
+      "conversions": "Conversions",
+      "conversionRate": "Conversion rate",
+      "generateUtm": "Generate UTM link",
+      "utmSource": "UTM Source",
+      "utmMedium": "UTM Medium",
+      "utmCampaign": "UTM Campaign",
+      "generateLink": "Generate link",
+      "copy": "Copy"
+    },
+    "revenue": {
+      "title": "My Revenue",
+      "pending": "Pending payment",
+      "paid": "Already paid",
+      "requestPayout": "Request payout",
+      "minimumAmount": "Minimum amount: €50",
+      "table": {
+        "month": "Month",
+        "subscribers": "Active subscribers",
+        "amount": "Amount",
+        "status": "Status"
+      },
+      "status": {
+        "pending": "Pending",
+        "validated": "Validated",
+        "paid": "Paid"
+      },
+      "paymentInfo": "Payment Information",
+      "paymentType": "Payment method",
+      "paypalEmail": "PayPal email",
+      "iban": "IBAN",
+      "updatePayment": "Update payment information"
+    },
+    "assets": {
+      "title": "Marketing Assets",
+      "subtitle": "All the tools you need to promote our products",
+      "visuals": "Visuals",
+      "texts": "Marketing Texts",
+      "guide": "Promotion Guide",
+      "brandKit": "Etudia Brand Kit",
+      "download": "Download",
+      "copy": "Copy"
+    },
+    "profile": {
+      "title": "My Profile",
+      "personalInfo": "Personal Information",
+      "name": "Name",
+      "email": "Email",
+      "platform": "Platform",
+      "profileUrl": "Profile Link",
+      "thematic": "Thematic",
+      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "paymentInfo": "Payment Information",
+      "save": "Save",
+      "saving": "Saving...",
+      "saved": "Saved successfully"
     }
+  },
+  "legal": {
+    "cgu": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "mentions": "Legal Notice",
+    "backToHome": "Back to Home",
+    "lastUpdated": "Last updated"
   },
   "admin": {
     "title": "Administration",
@@ -529,7 +395,6 @@
       "saas": "SaaS Management",
       "creators": "Creator Management",
       "users": "User Management",
-      "ideas": "Ideas Management",
       "analytics": "Analytics",
       "settings": "Settings"
     },
@@ -570,16 +435,6 @@
       "revenue": "Revenue Generated",
       "lastActive": "Last Active",
       "deactivate": "Deactivate"
-    },
-    "ideas": {
-      "title": "Ideas",
-      "review": "Review",
-      "approve": "Approve",
-      "reject": "Reject",
-      "inProgress": "In Progress",
-      "submitted": "Submitted",
-      "approved": "Approved",
-      "developing": "Developing"
     },
     "analytics": {
       "title": "Analytics",

@@ -4,7 +4,7 @@ import React, { forwardRef } from "react"
 import { motion } from "framer-motion"
 
 interface ButtonProps {
-  variant?: "primary" | "secondary" | "ghost"
+  variant?: "primary" | "secondary" | "ghost" | "cta"
   size?: "sm" | "md" | "lg"
   isLoading?: boolean
   icon?: React.ReactNode
@@ -37,15 +37,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         "bg-indigo-600 dark:bg-indigo-500 text-white hover:bg-indigo-500 dark:hover:bg-indigo-400 disabled:opacity-50",
       secondary:
-        "bg-white dark:bg-transparent border border-zinc-300 dark:border-zinc-700 text-zinc-950 dark:text-zinc-50 hover:bg-zinc-50 dark:hover:bg-zinc-800 disabled:opacity-50",
+        "bg-transparent border border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-50",
       ghost:
-        "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 disabled:opacity-50",
+        "text-slate-600 dark:text-white/60 hover:text-slate-950 dark:hover:text-white disabled:opacity-50",
+      cta:
+        "bg-amber-500 text-slate-950 font-semibold hover:bg-amber-400 shadow-lg shadow-amber-500/25 disabled:opacity-50",
     }
 
     const sizeStyles = {
-      sm: "px-3 py-1.5 text-sm",
-      md: "px-4 py-2 text-base",
-      lg: "px-6 py-3 text-lg",
+      sm: "px-3.5 py-1.5 text-sm",
+      md: "px-5 py-2.5 text-sm",
+      lg: "px-8 py-3.5 text-base",
     }
 
     return (

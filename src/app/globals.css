@@ -11,30 +11,32 @@
   --color-accent-hover: #818CF8;
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-cta: #F59E0B;
+  --color-cta-hover: #D97706;
   --font-sans: var(--font-inter);
   --font-display: var(--font-instrument-sans);
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #09090B;
-  --card: #F4F4F5;
-  --card-border: #D4D4D8;
-  --muted: #E4E4E7;
-  --muted-foreground: #71717A;
-  --chart-grid: #d4d4d8;
-  --chart-axis: #71717a;
+  --background: #FAFBFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-border: #E2E8F0;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --chart-grid: #e2e8f0;
+  --chart-axis: #64748b;
 }
 
 .dark {
-  --background: #09090B;
-  --foreground: #FAFAFA;
-  --card: #18181B;
-  --card-border: #3F3F46;
-  --muted: #27272A;
-  --muted-foreground: #A1A1AA;
-  --chart-grid: #3f3f46;
-  --chart-axis: #a1a1aa;
+  --background: #0a0a1a;
+  --foreground: #F8FAFC;
+  --card: #111827;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --muted: #1E293B;
+  --muted-foreground: rgba(255, 255, 255, 0.5);
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-axis: rgba(255, 255, 255, 0.5);
 }
 
 body {
@@ -57,7 +59,7 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -65,25 +67,59 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(155, 155, 155, 0.3);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(155, 155, 155, 0.5);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Grid pattern for hero backgrounds */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 .dark .grid-pattern {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Gradient text utility — light mode default, dark override */
+.gradient-text {
+  background: linear-gradient(135deg, #1E293B 0%, #6366F1 50%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #F8FAFC 0%, #818CF8 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect for cards on hover */
+.card-glow {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+.dark .card-glow:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
 }

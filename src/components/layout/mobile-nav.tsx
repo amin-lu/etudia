@@ -7,10 +7,9 @@ import { X, Sun, Moon, Globe } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navItems = [
-  { href: '/catalogue', key: 'catalogue' },
+  { href: '/#applications', key: 'apps' },
+  { href: '/#methode', key: 'method' },
   { href: '/devenir-partenaire', key: 'creators' },
-  { href: '/comment-ca-marche', key: 'howItWorks' },
-  { href: '/a-propos', key: 'about' },
 ] as const
 
 interface MobileNavProps {
@@ -34,86 +33,93 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          {/* Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/50"
-            onClick={onClose}
-          />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 bg-white/95 dark:bg-[#0a0a1a]/95 backdrop-blur-xl flex flex-col"
+        >
+          {/* Top bar */}
+          <div className="flex items-center justify-between p-4">
+            <span className="text-xl font-bold font-[family-name:var(--font-display)]">
+              <span className="text-foreground">etudia</span>
+              <span className="text-indigo-500">.</span>
+            </span>
+            <button
+              onClick={onClose}
+              className="rounded-lg p-2 text-slate-600 dark:text-white/60 hover:text-slate-950 dark:hover:text-white transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
 
-          {/* Drawer */}
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 z-50 h-full w-72 bg-white dark:bg-zinc-950 border-l border-zinc-200 dark:border-zinc-800 shadow-xl dark:shadow-none flex flex-col"
-          >
-            {/* Close button */}
-            <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
-              <span className="text-lg font-semibold font-[family-name:var(--font-display)] text-indigo-600 dark:text-indigo-500">
-                etudia
-              </span>
-              <button
-                onClick={onClose}
-                className="rounded-xl p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-                aria-label="Close menu"
+          {/* Centered nav links */}
+          <nav className="flex-1 flex flex-col items-center justify-center gap-2">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + index * 0.05 }}
               >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            {/* Nav links */}
-            <nav className="flex-1 flex flex-col px-6 py-4 gap-1 overflow-y-auto">
-              {navItems.map((item) => (
                 <Link
-                  key={item.key}
                   href={item.href}
                   onClick={onClose}
-                  className={`block w-full text-left px-6 py-3 text-lg rounded-xl transition-colors ${
+                  className={`block text-2xl font-medium px-6 py-3 rounded-lg transition-colors ${
                     pathname === item.href
-                      ? 'text-indigo-600 dark:text-indigo-400 font-medium bg-indigo-100 dark:bg-indigo-500/10'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                      ? 'text-indigo-600 dark:text-indigo-400'
+                      : 'text-slate-700 dark:text-white/70 hover:text-slate-950 dark:hover:text-white'
                   }`}
                 >
                   {t(`nav.${item.key}`)}
                 </Link>
-              ))}
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
+            >
+              <div className="w-12 h-px bg-slate-200 dark:bg-white/10 my-4" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
               <Link
                 href="/partenaire/connexion"
                 onClick={onClose}
-                className="block w-full text-left px-6 py-3 text-lg rounded-xl transition-colors text-indigo-600 dark:text-indigo-400 font-medium bg-indigo-100 dark:bg-indigo-500/10 border-t border-zinc-200 dark:border-zinc-800 mt-2 pt-4"
+                className="block text-lg font-medium px-6 py-3 rounded-lg text-indigo-600 dark:text-indigo-400 transition-colors"
               >
                 {t('nav.partnerArea')}
               </Link>
-            </nav>
+            </motion.div>
+          </nav>
 
-            {/* Bottom: theme + language toggles */}
-            <div className="p-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-3">
-              <button
-                onClick={switchLocale}
-                className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex-1"
-                aria-label="Switch language"
-              >
-                <Globe className="h-4 w-4" />
-                <span>{locale === 'fr' ? 'English' : 'Français'}</span>
-              </button>
+          {/* Bottom: theme + language toggles */}
+          <div className="p-6 flex items-center justify-center gap-4">
+            <button
+              onClick={switchLocale}
+              className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm text-slate-600 dark:text-white/60 hover:text-slate-950 dark:hover:text-white transition-colors"
+              aria-label="Switch language"
+            >
+              <Globe className="h-4 w-4" />
+              <span>{locale === 'fr' ? 'English' : 'Français'}</span>
+            </button>
 
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="rounded-xl p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-                aria-label="Toggle theme"
-              >
-                <Sun className="h-4 w-4 hidden dark:block" />
-                <Moon className="h-4 w-4 block dark:hidden" />
-              </button>
-            </div>
-          </motion.div>
-        </>
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="rounded-lg p-2.5 text-slate-600 dark:text-white/60 hover:text-slate-950 dark:hover:text-white transition-colors"
+              aria-label="Toggle theme"
+            >
+              <Sun className="h-4 w-4 hidden dark:block" />
+              <Moon className="h-4 w-4 block dark:hidden" />
+            </button>
+          </div>
+        </motion.div>
       )}
     </AnimatePresence>
   )

@@ -48,23 +48,7 @@ async function main() {
     },
   })
 
-  const fittrack = await prisma.application.upsert({
-    where: { slug: 'fittrack-pro' },
-    update: {},
-    create: {
-      name: 'FitTrack Pro',
-      slug: 'fittrack-pro',
-      description: 'Suivi nutritionnel et programmes d\'entraînement personnalisés.',
-      descriptionEn: 'Nutritional tracking and personalized training programs.',
-      category: 'Fitness',
-      categoryEn: 'Fitness',
-      price: 9.90,
-      commissionRate: 0.45,
-      status: 'coming_soon',
-    },
-  })
-
-  console.log('✅ Applications créées:', { etudiet: etudiet.id, bacsuccess: bacsuccess.id, fittrack: fittrack.id })
+  console.log('✅ Applications créées:', { etudiet: etudiet.id, bacsuccess: bacsuccess.id })
 
   // ── Admin par défaut ──────────────────────────
   const adminPassword = await hash('admin-etudia-2025', 12)

@@ -9,8 +9,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   return {
-    title: locale === 'fr' ? 'Devenir créateur partenaire — Etudia' : 'Become a Creator Partner — Etudia',
-    description: locale === 'fr' ? 'Transformez votre audience en revenus récurrents. Devenez partenaire Etudia et touchez 30 à 50% de commission sur chaque abonnement.' : 'Transform your audience into recurring revenue. Become an Etudia partner and earn 30-50% commission on every subscription.',
+    title: locale === 'fr' ? 'Devenir ambassadeur — Etudia' : 'Become an Ambassador — Etudia',
+    description: locale === 'fr' ? 'Transformez votre audience en revenus récurrents. Devenez ambassadeur Etudia et touchez 30 à 50% de commission sur chaque abonnement.' : 'Transform your audience into recurring revenue. Become an Etudia ambassador and earn 30-50% commission on every subscription.',
     openGraph: { images: ['/og-image.png'] },
   }
 }
