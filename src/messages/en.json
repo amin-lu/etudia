@@ -7,7 +7,8 @@
       "creators": "Become Ambassador",
       "about": "About",
       "admin": "Admin",
-      "partnerArea": "Ambassador Area"
+      "partnerArea": "Ambassador Area",
+      "ctaButton": "Become Ambassador"
     },
     "buttons": {
       "learnMore": "Learn More",
@@ -42,7 +43,11 @@
       "terms": "Terms of Use",
       "contact": "Contact",
       "followUs": "Follow Us",
-      "newsletter": "Subscribe to our newsletter"
+      "newsletter": "Subscribe to our newsletter",
+      "newsletterCta": "Get notified of new launches",
+      "newsletterPlaceholder": "Your email",
+      "newsletterSuccess": "Successfully subscribed!",
+      "socialLinks": "Follow us"
     },
     "loading": "Loading...",
     "errors": {
@@ -63,11 +68,24 @@
       "title": "Better apps to learn better. Built on cognitive science.",
       "subtitle": "Etudia builds learning apps for every subject that deserves a better tool — degrees, exams, skills. Spaced repetition, active recall and gamification at the core.",
       "cta1": "Explore our apps",
-      "cta2": "Become an ambassador"
+      "cta2": "Become an ambassador",
+      "stats": {
+        "apps": "apps launched",
+        "students": "active students",
+        "fields": "fields covered"
+      }
     },
     "method": {
       "title": "Science-backed learning",
       "subtitle": "Every Etudia app is built on principles proven by cognitive science research.",
+      "comparison": {
+        "title": "Memory retention after 7 days",
+        "passive": "Re-reading notes",
+        "passivePercent": "20",
+        "active": "Active self-testing",
+        "activePercent": "80",
+        "source": "Source: Roediger & Karpicke, 2006"
+      },
       "spacedRepetition": {
         "title": "Spaced repetition",
         "description": "The algorithm identifies what you're forgetting and shows it again at the optimal time."
@@ -87,7 +105,57 @@
     },
     "featured": {
       "title": "One app per subject. Yours might already be ready.",
-      "subtitle": "Learning tools built for every field — ready to recommend."
+      "subtitle": "Learning tools built for every field — ready to recommend.",
+      "available": "Available",
+      "comingSoonTitle": "Coming Soon",
+      "comingSoonSubtitle": "These apps are currently in development.",
+      "notifyCta": "Get notified at launch",
+      "notifyPlaceholder": "Your email",
+      "notifySuccess": "You'll be notified at launch!",
+      "progressLabel": "Development progress",
+      "users": "users",
+      "quizzes": "quizzes",
+      "creatorCommission": "Creator commission"
+    },
+    "socialProof": {
+      "title": "They're already learning with Etudia",
+      "stats": {
+        "apps": { "value": "2", "label": "Apps launched", "suffix": "" },
+        "students": { "value": "500", "label": "Active students", "suffix": "+" },
+        "fields": { "value": "3", "label": "Fields covered", "suffix": "" },
+        "quizzes": { "value": "1000", "label": "Quizzes available", "suffix": "+" }
+      },
+      "testimonials": {
+        "title": "What they say",
+        "items": [
+          {
+            "name": "Sarah M.",
+            "role": "BTS Dietetics student",
+            "quote": "ETUDIET helped me go from 10 to 16 in food science. The targeted quizzes make all the difference.",
+            "rating": 5,
+            "badge": "Student"
+          },
+          {
+            "name": "Amadou K.",
+            "role": "Senior year student, Bamako",
+            "quote": "BacSuccess helps me study everywhere, even when I don't have access to my textbooks. I gained 4 points on my last mock exams.",
+            "rating": 5,
+            "badge": "Student"
+          },
+          {
+            "name": "Lea D.",
+            "role": "Nutrition content creator",
+            "quote": "I recommended ETUDIET to my community and I earn my commission every month. The product is great, it's easy to talk about.",
+            "rating": 5,
+            "badge": "Ambassador"
+          }
+        ]
+      },
+      "badges": {
+        "science": "Based on cognitive science",
+        "creators": "Recommended by our ambassadors",
+        "france": "Data hosted in France"
+      }
     },
     "ambassador": {
       "title": "You create educational content? Your audience deserves the best tools.",
@@ -105,7 +173,24 @@
         "description": "30 to 50% recurring commission on every subscription."
       },
       "cta": "Join the ambassador program",
-      "trust": "Free signup · No commitment · Monthly automatic payout"
+      "trust": "Free signup · No commitment · Monthly automatic payout",
+      "revenueHighlight": "30 to 50%",
+      "revenueHighlightSub": "recurring commission on every subscription",
+      "platforms": {
+        "title": "Creators on every platform",
+        "tiktok": "TikTok",
+        "instagram": "Instagram",
+        "youtube": "YouTube"
+      },
+      "testimonial": {
+        "name": "Fatou S.",
+        "role": "Education creator, 25K followers",
+        "quote": "In 3 months, I generated 47 subscriptions through my link. With 40% commission, it gives me a stable extra income every month.",
+        "result": "€612/month recurring revenue"
+      },
+      "simulatorTitle": "How much could you earn?",
+      "simulatorLabel": "Number of followers",
+      "simulatorCta": "See the full simulator"
     }
   },
   "creators": {

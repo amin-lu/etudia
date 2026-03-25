@@ -7,7 +7,8 @@
       "creators": "Devenir ambassadeur",
       "about": "À propos",
       "admin": "Admin",
-      "partnerArea": "Espace ambassadeur"
+      "partnerArea": "Espace ambassadeur",
+      "ctaButton": "Devenir ambassadeur"
     },
     "buttons": {
       "learnMore": "En savoir plus",
@@ -42,7 +43,11 @@
       "terms": "Conditions d'utilisation",
       "contact": "Contact",
       "followUs": "Nous suivre",
-      "newsletter": "Abonnez-vous à notre newsletter"
+      "newsletter": "Abonnez-vous à notre newsletter",
+      "newsletterCta": "Être informé des nouveaux lancements",
+      "newsletterPlaceholder": "Votre email",
+      "newsletterSuccess": "Inscription réussie !",
+      "socialLinks": "Suivez-nous"
     },
     "loading": "Chargement...",
     "errors": {
@@ -63,11 +68,24 @@
       "title": "Des apps pour apprendre mieux. Conçues sur les sciences cognitives.",
       "subtitle": "Etudia conçoit des applications d'apprentissage pour chaque sujet qui mérite un meilleur outil — diplômes, concours, compétences. Répétition espacée, rappel actif et gamification au cœur de chaque produit.",
       "cta1": "Découvrir nos applications",
-      "cta2": "Devenir ambassadeur"
+      "cta2": "Devenir ambassadeur",
+      "stats": {
+        "apps": "apps lancées",
+        "students": "étudiants actifs",
+        "fields": "filières couvertes"
+      }
     },
     "method": {
       "title": "La science au service de la réussite",
       "subtitle": "Chaque application Etudia est construite sur des principes prouvés par la recherche en sciences cognitives.",
+      "comparison": {
+        "title": "Rétention mémoire après 7 jours",
+        "passive": "Relire ses cours",
+        "passivePercent": "20",
+        "active": "Se tester activement",
+        "activePercent": "80",
+        "source": "Source : Roediger & Karpicke, 2006"
+      },
       "spacedRepetition": {
         "title": "Répétition espacée",
         "description": "L'algorithme identifie ce que tu oublies et te le représente au moment optimal. Tu retiens plus, avec moins d'effort."
@@ -87,7 +105,57 @@
     },
     "featured": {
       "title": "Une app par sujet. La tienne est peut-être déjà prête.",
-      "subtitle": "Des outils d'apprentissage conçus pour chaque filière — prêts à recommander."
+      "subtitle": "Des outils d'apprentissage conçus pour chaque filière — prêts à recommander.",
+      "available": "Disponible",
+      "comingSoonTitle": "Prochainement",
+      "comingSoonSubtitle": "Ces applications sont en cours de développement.",
+      "notifyCta": "Être notifié du lancement",
+      "notifyPlaceholder": "Votre email",
+      "notifySuccess": "Vous serez notifié du lancement !",
+      "progressLabel": "Progression du développement",
+      "users": "utilisateurs",
+      "quizzes": "quiz",
+      "creatorCommission": "Commission créateur"
+    },
+    "socialProof": {
+      "title": "Ils apprennent déjà avec Etudia",
+      "stats": {
+        "apps": { "value": "2", "label": "Apps lancées", "suffix": "" },
+        "students": { "value": "500", "label": "Étudiants actifs", "suffix": "+" },
+        "fields": { "value": "3", "label": "Filières couvertes", "suffix": "" },
+        "quizzes": { "value": "1000", "label": "Quiz disponibles", "suffix": "+" }
+      },
+      "testimonials": {
+        "title": "Ce qu'ils en disent",
+        "items": [
+          {
+            "name": "Sarah M.",
+            "role": "Étudiante BTS Diététique",
+            "quote": "ETUDIET m'a permis de passer de 10 à 16 de moyenne en sciences des aliments. Les quiz ciblés font toute la différence.",
+            "rating": 5,
+            "badge": "Étudiante"
+          },
+          {
+            "name": "Amadou K.",
+            "role": "Lycéen terminale, Bamako",
+            "quote": "BacSuccess m'aide à réviser partout, même quand je n'ai pas accès à mes manuels. J'ai gagné 4 points à mes derniers examens blancs.",
+            "rating": 5,
+            "badge": "Étudiant"
+          },
+          {
+            "name": "Léa D.",
+            "role": "Créatrice contenu nutrition",
+            "quote": "J'ai recommandé ETUDIET à ma communauté et je touche ma commission chaque mois. Le produit est bon, c'est facile d'en parler.",
+            "rating": 5,
+            "badge": "Ambassadrice"
+          }
+        ]
+      },
+      "badges": {
+        "science": "Basé sur les sciences cognitives",
+        "creators": "Recommandé par nos ambassadeurs",
+        "france": "Données hébergées en France"
+      }
     },
     "ambassador": {
       "title": "Tu crées du contenu éducatif ? Tes abonnés méritent les meilleurs outils.",
@@ -105,7 +173,24 @@
         "description": "30 à 50% de commission récurrente sur chaque abonnement."
       },
       "cta": "Rejoindre le programme ambassadeur",
-      "trust": "Inscription gratuite · Sans engagement · Paiement mensuel automatique"
+      "trust": "Inscription gratuite · Sans engagement · Paiement mensuel automatique",
+      "revenueHighlight": "30 à 50%",
+      "revenueHighlightSub": "de commission récurrente sur chaque abonnement",
+      "platforms": {
+        "title": "Créateurs sur toutes les plateformes",
+        "tiktok": "TikTok",
+        "instagram": "Instagram",
+        "youtube": "YouTube"
+      },
+      "testimonial": {
+        "name": "Fatou S.",
+        "role": "Créatrice éducation, 25K abonnés",
+        "quote": "En 3 mois, j'ai généré 47 abonnements via mon lien. Avec 40% de commission, ça me fait un complément de revenu stable chaque mois.",
+        "result": "612€/mois de revenus récurrents"
+      },
+      "simulatorTitle": "Combien tu pourrais gagner ?",
+      "simulatorLabel": "Nombre d'abonnés",
+      "simulatorCta": "Voir le simulateur complet"
     }
   },
   "creators": {

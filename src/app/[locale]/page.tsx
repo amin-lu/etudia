@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/home/hero'
+import { SocialProof } from '@/components/home/social-proof'
 import { MethodSection } from '@/components/home/method-section'
 import { FeaturedSaas } from '@/components/home/featured-saas'
 import { AmbassadorSection } from '@/components/home/ambassador-section'
@@ -23,6 +24,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SocialProof />
       <MethodSection />
       <FeaturedSaas />
       <AmbassadorSection />

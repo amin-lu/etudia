@@ -75,6 +75,13 @@ export function Header() {
             {/* Actions */}
             <div className="flex items-center gap-1">
               <Link
+                href="/devenir-partenaire"
+                className="hidden lg:flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold bg-indigo-600 dark:bg-indigo-500 text-white hover:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors"
+              >
+                {t('nav.ctaButton')}
+              </Link>
+
+              <Link
                 href="/partenaire/connexion"
                 className="hidden sm:flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm text-slate-600 dark:text-white/60 hover:text-slate-950 dark:hover:text-white transition-colors font-medium"
               >
